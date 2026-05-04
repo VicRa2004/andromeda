@@ -1,36 +1,39 @@
-export interface ButtonProps
-	extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-	/** Is this the principal call to action on the page? */
-	primary?: boolean;
-	/** What background color to use */
-	backgroundColor?: string;
-	/** How large should the button be? */
-	size?: "small" | "medium" | "large";
-	/** Button contents */
-	label: string;
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  /** Button variant - controls appearance and behavior */
+  variant?: "primary" | "secondary" | "outline" | "ghost";
+  /** Button size */
+  size?: "sm" | "md" | "lg";
+  /** Button contents */
+  children?: React.ReactNode;
+  /** Optional CSS class name to extend styling */
+  className?: string;
 }
 
-/** Primary UI component for user interaction */
+/** Button UI component for user interaction
+ * Uses BEM methodology with CSS custom properties for theming
+ *
+ * @example
+ * <Button variant="primary" size="md">Click me</Button>
+ * <Button variant="outline" size="sm">Secondary action</Button>
+ */
 export const Button = ({
-	primary = false,
-	size = "medium",
-	backgroundColor,
-	label,
-	...props
+  variant = "secondary",
+  size = "md",
+  className = "",
+  children,
+  ...props
 }: ButtonProps) => {
-	const mode = primary
-		? "storybook-button--primary"
-		: "storybook-button--secondary";
-	return (
-		<button
-			type="button"
-			className={["storybook-button", `storybook-button--${size}`, mode].join(
-				" ",
-			)}
-			style={{ backgroundColor }}
-			{...props}
-		>
-			{label}
-		</button>
-	);
+  const baseClass = "button";
+  const variantClass = `${baseClass}--${variant}`;
+  const sizeClass = `${baseClass}--${size}`;
+
+  const classes = [baseClass, variantClass, sizeClass, className]
+    .filter(Boolean)
+    .join(" ");
+
+  return (
+    <button type="button" className={classes} {...props}>
+      {children}
+    </button>
+  );
 };

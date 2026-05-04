@@ -1,0 +1,182 @@
+/* @layer reset */
+
+/**
+ * Normalize and reset styles for Andromeda Design System
+ * Based on normalize.css principles with custom adjustments
+ */
+
+/* Apply box-sizing globally */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Reset margin and padding */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* Base element resets */
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0;
+	font-weight: inherit;
+	font-size: inherit;
+}
+
+/* Paragraphs and text elements */
+p {
+	margin: 0;
+	padding: 0;
+}
+
+/* Lists */
+ul,
+ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+li {
+	margin: 0;
+	padding: 0;
+}
+
+/* Links */
+a {
+	background-color: transparent;
+	text-decoration: none;
+	color: inherit;
+}
+
+/* Images */
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+/* Form elements */
+button,
+input,
+optgroup,
+select,
+textarea {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	color: inherit;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: none;
+}
+
+button {
+	cursor: pointer;
+	border: none;
+	background: none;
+	font-family: inherit;
+	font-size: inherit;
+}
+
+input,
+textarea,
+select {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+textarea {
+	resize: vertical;
+	overflow: auto;
+}
+
+/* Remove button styling when used as a base */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+/* Remove input number spinner */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
+/* Remove search input styling */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+	-webkit-appearance: none;
+}
+
+/* Select element */
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+	background-repeat: no-repeat;
+	background-position: right 0.5rem center;
+	background-size: 1.5em 1.5em;
+	padding-right: 2.5rem;
+}
+
+/* Table */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Remove focus outline for mouse users, keep for keyboard users */
+:focus-visible {
+	outline: 2px solid var(--ds-color-interaction-focus-ring);
+	outline-offset: 2px;
+}
+
+/* Disable focus outline for mouse users on specific elements if needed */
+:focus:not(:focus-visible) {
+	outline: none;
+}
+
+/* Remove tap highlight on mobile */
+-webkit-tap-highlight-color: transparent;

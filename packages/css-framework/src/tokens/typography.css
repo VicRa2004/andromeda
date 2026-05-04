@@ -1,0 +1,63 @@
+/* @layer tokens */
+
+/**
+ * Typography tokens for Andromeda Design System
+ * Includes font families, sizes, weights, line heights, and letter spacing
+ */
+
+:root {
+	/* Font families */
+	--ds-font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		"Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+		"Segoe UI Emoji", "Segoe UI Symbol";
+	--ds-font-family-mono: "Fira Code", "Courier New", monospace;
+	--ds-font-family-display: var(--ds-font-family-base);
+
+	/* Font sizes - scale 1.25x (minor third) */
+	--ds-font-size-xs: 0.75rem; /* 12px */
+	--ds-font-size-sm: 0.875rem; /* 14px */
+	--ds-font-size-base: 1rem; /* 16px */
+	--ds-font-size-lg: 1.125rem; /* 18px */
+	--ds-font-size-xl: 1.5rem; /* 24px */
+	--ds-font-size-2xl: 1.875rem; /* 30px */
+	--ds-font-size-3xl: 2.25rem; /* 36px */
+	--ds-font-size-4xl: 3rem; /* 48px */
+
+	/* Font weights */
+	--ds-font-weight-regular: 400;
+	--ds-font-weight-medium: 500;
+	--ds-font-weight-semibold: 600;
+	--ds-font-weight-bold: 700;
+
+	/* Line heights */
+	--ds-line-height-tight: 1.2;
+	--ds-line-height-snug: 1.375;
+	--ds-line-height-normal: 1.5;
+	--ds-line-height-relaxed: 1.625;
+	--ds-line-height-loose: 2;
+
+	/* Letter spacing */
+	--ds-letter-spacing-tight: -0.02em;
+	--ds-letter-spacing-normal: 0em;
+	--ds-letter-spacing-wide: 0.025em;
+	--ds-letter-spacing-wider: 0.05em;
+	--ds-letter-spacing-widest: 0.1em;
+
+	/* Text presets for convenience */
+	--ds-text-display: 700 var(--ds-font-size-4xl) / var(--ds-line-height-tight)
+		var(--ds-font-family-display);
+	--ds-text-heading-1: 700 var(--ds-font-size-3xl) / var(--ds-line-height-tight)
+		var(--ds-font-family-base);
+	--ds-text-heading-2: 700 var(--ds-font-size-2xl) / var(--ds-line-height-snug)
+		var(--ds-font-family-base);
+	--ds-text-heading-3: 700 var(--ds-font-size-xl) / var(--ds-line-height-snug)
+		var(--ds-font-family-base);
+	--ds-text-body-lg: 400 var(--ds-font-size-lg) / var(--ds-line-height-relaxed)
+		var(--ds-font-family-base);
+	--ds-text-body: 400 var(--ds-font-size-base) / var(--ds-line-height-normal)
+		var(--ds-font-family-base);
+	--ds-text-body-sm: 400 var(--ds-font-size-sm) / var(--ds-line-height-normal)
+		var(--ds-font-family-base);
+	--ds-text-caption: 500 var(--ds-font-size-xs) / var(--ds-line-height-normal)
+		var(--ds-font-family-base);
+}

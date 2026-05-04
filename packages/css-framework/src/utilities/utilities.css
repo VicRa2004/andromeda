@@ -1,0 +1,204 @@
+/* @layer utilities */
+
+/**
+ * Utility classes for common patterns
+ * Minimal set of utilities for spacing, text, and flexbox
+ */
+
+/* Spacing utilities */
+.mt-1 {
+	margin-top: var(--ds-space-1);
+}
+.mt-2 {
+	margin-top: var(--ds-space-2);
+}
+.mt-3 {
+	margin-top: var(--ds-space-3);
+}
+.mt-4 {
+	margin-top: var(--ds-space-4);
+}
+.mt-6 {
+	margin-top: var(--ds-space-6);
+}
+
+.mb-1 {
+	margin-bottom: var(--ds-space-1);
+}
+.mb-2 {
+	margin-bottom: var(--ds-space-2);
+}
+.mb-3 {
+	margin-bottom: var(--ds-space-3);
+}
+.mb-4 {
+	margin-bottom: var(--ds-space-4);
+}
+.mb-6 {
+	margin-bottom: var(--ds-space-6);
+}
+
+.gap-1 {
+	gap: var(--ds-space-1);
+}
+.gap-2 {
+	gap: var(--ds-space-2);
+}
+.gap-3 {
+	gap: var(--ds-space-3);
+}
+.gap-4 {
+	gap: var(--ds-space-4);
+}
+
+/* Flexbox utilities */
+.flex {
+	display: flex;
+}
+
+.flex-col {
+	flex-direction: column;
+}
+
+.flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.flex-between {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.flex-1 {
+	flex: 1;
+}
+
+/* Text utilities */
+.text-center {
+	text-align: center;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.font-bold {
+	font-weight: var(--ds-font-weight-bold);
+}
+
+.font-medium {
+	font-weight: var(--ds-font-weight-medium);
+}
+
+.text-sm {
+	font-size: var(--ds-font-size-sm);
+}
+
+.text-lg {
+	font-size: var(--ds-font-size-lg);
+}
+
+.text-primary {
+	color: var(--ds-color-primary);
+}
+
+.text-secondary {
+	color: var(--ds-color-text-secondary);
+}
+
+.text-error {
+	color: var(--ds-color-error);
+}
+
+.text-success {
+	color: var(--ds-color-success);
+}
+
+/* Display utilities */
+.hidden {
+	display: none;
+}
+
+.block {
+	display: block;
+}
+
+.inline {
+	display: inline;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+/* Visibility utilities */
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border-width: 0;
+}
+
+/* Overflow utilities */
+.truncate {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.line-clamp-2 {
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.line-clamp-3 {
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+/* Container utilities */
+.container {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding-left: var(--ds-space-4);
+	padding-right: var(--ds-space-4);
+}
+
+/* Cursor utilities */
+.cursor-pointer {
+	cursor: pointer;
+}
+
+.cursor-default {
+	cursor: default;
+}
+
+.cursor-not-allowed {
+	cursor: not-allowed;
+}
+
+/* Transition utilities */
+.transition-fast {
+	transition: all var(--ds-transition-fast);
+}
+
+.transition-normal {
+	transition: all var(--ds-transition-normal);
+}
