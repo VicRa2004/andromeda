@@ -12,7 +12,8 @@ body {
 	line-height: var(--ds-line-height-normal);
 	color: var(--ds-color-text);
 	background-color: var(--ds-color-background);
-	transition: background-color var(--ds-transition-normal),
+	transition:
+		background-color var(--ds-transition-normal),
 		color var(--ds-transition-normal);
 }
 
@@ -220,7 +221,8 @@ select {
 	border-radius: var(--ds-radius-md);
 	background-color: var(--ds-color-background);
 	color: var(--ds-color-text);
-	transition: border-color var(--ds-transition-fast),
+	transition:
+		border-color var(--ds-transition-fast),
 		box-shadow var(--ds-transition-fast);
 }
 
@@ -229,8 +231,7 @@ textarea:focus,
 select:focus {
 	outline: none;
 	border-color: var(--ds-color-primary);
-	box-shadow: 0 0 0 3px
-		rgba(37, 99, 235, 0.1);
+	box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
 input:disabled,

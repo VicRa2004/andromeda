@@ -74,7 +74,8 @@
 	color: var(--ds-color-text-secondary);
 	text-decoration: none;
 	border-radius: var(--ds-radius-md);
-	transition: background-color var(--ds-transition-fast),
+	transition:
+		background-color var(--ds-transition-fast),
 		color var(--ds-transition-fast);
 	position: relative;
 	white-space: nowrap;

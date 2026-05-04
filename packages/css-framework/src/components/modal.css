@@ -147,7 +147,8 @@
 	border-radius: var(--ds-radius-md);
 	cursor: pointer;
 	color: var(--ds-color-text-secondary);
-	transition: background-color var(--ds-transition-fast),
+	transition:
+		background-color var(--ds-transition-fast),
 		color var(--ds-transition-fast);
 	font-size: 24px;
 	line-height: 1;

@@ -44,7 +44,8 @@
 	background-color: var(--ds-color-background);
 	border: 1px solid var(--ds-color-border);
 	border-radius: var(--ds-radius-md);
-	transition: border-color var(--ds-transition-fast),
+	transition:
+		border-color var(--ds-transition-fast),
 		box-shadow var(--ds-transition-fast),
 		background-color var(--ds-transition-fast);
 }

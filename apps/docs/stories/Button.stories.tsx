@@ -98,7 +98,14 @@ export const AllVariants: Story = {
 
 export const AllSizes: Story = {
 	render: () => (
-		<div style={{ display: "flex", gap: "12px", flexWrap: "wrap", alignItems: "center" }}>
+		<div
+			style={{
+				display: "flex",
+				gap: "12px",
+				flexWrap: "wrap",
+				alignItems: "center",
+			}}
+		>
 			<Button variant="primary" size="sm">
 				Small
 			</Button>

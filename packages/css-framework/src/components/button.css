@@ -21,7 +21,8 @@
 	border: 2px solid transparent;
 	border-radius: var(--ds-radius-md);
 	cursor: pointer;
-	transition: background-color var(--ds-transition-fast),
+	transition:
+		background-color var(--ds-transition-fast),
 		border-color var(--ds-transition-fast),
 		color var(--ds-transition-fast),
 		box-shadow var(--ds-transition-fast);

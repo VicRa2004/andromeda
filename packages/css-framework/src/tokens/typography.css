@@ -7,9 +7,9 @@
 
 :root {
 	/* Font families */
-	--ds-font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-		"Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
-		"Segoe UI Emoji", "Segoe UI Symbol";
+	--ds-font-family-base:
+		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+		Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	--ds-font-family-mono: "Fira Code", "Courier New", monospace;
 	--ds-font-family-display: var(--ds-font-family-base);
 
@@ -44,20 +44,28 @@
 	--ds-letter-spacing-widest: 0.1em;
 
 	/* Text presets for convenience */
-	--ds-text-display: 700 var(--ds-font-size-4xl) / var(--ds-line-height-tight)
+	--ds-text-display:
+		700 var(--ds-font-size-4xl) / var(--ds-line-height-tight)
 		var(--ds-font-family-display);
-	--ds-text-heading-1: 700 var(--ds-font-size-3xl) / var(--ds-line-height-tight)
+	--ds-text-heading-1:
+		700 var(--ds-font-size-3xl) / var(--ds-line-height-tight)
 		var(--ds-font-family-base);
-	--ds-text-heading-2: 700 var(--ds-font-size-2xl) / var(--ds-line-height-snug)
+	--ds-text-heading-2:
+		700 var(--ds-font-size-2xl) / var(--ds-line-height-snug)
 		var(--ds-font-family-base);
-	--ds-text-heading-3: 700 var(--ds-font-size-xl) / var(--ds-line-height-snug)
+	--ds-text-heading-3:
+		700 var(--ds-font-size-xl) / var(--ds-line-height-snug)
 		var(--ds-font-family-base);
-	--ds-text-body-lg: 400 var(--ds-font-size-lg) / var(--ds-line-height-relaxed)
+	--ds-text-body-lg:
+		400 var(--ds-font-size-lg) / var(--ds-line-height-relaxed)
 		var(--ds-font-family-base);
-	--ds-text-body: 400 var(--ds-font-size-base) / var(--ds-line-height-normal)
+	--ds-text-body:
+		400 var(--ds-font-size-base) / var(--ds-line-height-normal)
 		var(--ds-font-family-base);
-	--ds-text-body-sm: 400 var(--ds-font-size-sm) / var(--ds-line-height-normal)
+	--ds-text-body-sm:
+		400 var(--ds-font-size-sm) / var(--ds-line-height-normal)
 		var(--ds-font-family-base);
-	--ds-text-caption: 500 var(--ds-font-size-xs) / var(--ds-line-height-normal)
+	--ds-text-caption:
+		500 var(--ds-font-size-xs) / var(--ds-line-height-normal)
 		var(--ds-font-family-base);
 }

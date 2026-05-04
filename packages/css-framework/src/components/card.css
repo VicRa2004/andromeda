@@ -13,7 +13,8 @@
 	background-color: var(--ds-color-background);
 	border-radius: var(--ds-radius-lg);
 	overflow: hidden;
-	transition: box-shadow var(--ds-transition-normal),
+	transition:
+		box-shadow var(--ds-transition-normal),
 		border-color var(--ds-transition-normal);
 
 	/* Default: elevated variant */
