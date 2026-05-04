@@ -1,0 +1,8 @@
+@layer reset, tokens, base, layout, components, utilities;
+
+/* Usando importaciones nativas de CSS */
+@import "./tokens/colors.css" layer(tokens);
+@import "./tokens/typography.css" layer(tokens);
+@import "./reset/normalize.css" layer(reset);
+@import "./components/button.css" layer(components);
+@import "./components/modal.css" layer(components);

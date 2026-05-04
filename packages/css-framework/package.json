@@ -1,0 +1,21 @@
+{
+	"name": "@andromeda/css-framework",
+	"version": "1.0.0",
+	"description": "Core CSS framework for the Andromeda design system",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/your-org/andromeda"
+	},
+	"files": [
+		"src",
+		"dist"
+	],
+	"types": "./src/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./src/index.d.ts",
+			"default": "./src/index.css"
+		}
+	}
+}
