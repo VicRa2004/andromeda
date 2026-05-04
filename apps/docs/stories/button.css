@@ -1,9 +1,0 @@
-/**
- * Button CSS has been moved to @andromeda/css-framework
- *
- * The Button component now uses BEM methodology with CSS custom properties
- * for theming. Component-specific styles are defined in:
- * packages/css-framework/src/components/button.css
- *
- * This file is kept for reference but is no longer used.
- */
