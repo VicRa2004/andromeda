@@ -1,0 +1,61 @@
+/* @layer components */
+
+.switch {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--ds-space-2);
+	cursor: pointer;
+}
+
+.switch__input {
+	appearance: none;
+	width: 2.5rem;
+	height: 1.25rem;
+	background-color: var(--ds-color-gray-300);
+	border-radius: 9999px;
+	position: relative;
+	cursor: pointer;
+	transition: background-color var(--ds-duration-fast) var(--ds-ease-in-out);
+}
+
+.switch__input::before {
+	content: "";
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	width: 1rem;
+	height: 1rem;
+	background-color: white;
+	border-radius: 50%;
+	transition: transform var(--ds-duration-fast) var(--ds-ease-in-out);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.switch__input:checked {
+	background-color: var(--ds-color-primary);
+}
+
+.switch__input:checked::before {
+	transform: translateX(1.25rem);
+}
+
+.switch__input:focus-visible {
+	outline: 2px solid var(--ds-color-interaction-focus-ring);
+	outline-offset: 2px;
+}
+
+.switch__input:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.switch__input:disabled ~ .switch__label {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.switch__label {
+	color: var(--ds-color-text);
+	font-size: var(--ds-font-size-sm);
+	user-select: none;
+}

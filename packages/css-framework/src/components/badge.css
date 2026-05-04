@@ -1,0 +1,52 @@
+/* @layer components */
+
+.badge {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.125rem 0.5rem;
+	font-size: 0.75rem;
+	font-weight: var(--ds-font-weight-medium);
+	line-height: 1.5;
+	white-space: nowrap;
+	border-radius: 9999px;
+	border: 1px solid transparent;
+}
+
+.badge--primary {
+	background-color: var(--ds-color-primary);
+	color: white;
+}
+
+.badge--secondary {
+	background-color: var(--ds-color-gray-100);
+	color: var(--ds-color-gray-800);
+	border-color: var(--ds-color-border);
+}
+
+.badge--success {
+	background-color: rgba(16, 185, 129, 0.15);
+	color: var(--ds-color-success);
+}
+
+.badge--warning {
+	background-color: rgba(245, 158, 11, 0.15);
+	color: var(--ds-color-warning);
+}
+
+.badge--error {
+	background-color: rgba(239, 68, 68, 0.15);
+	color: var(--ds-color-error);
+}
+
+.badge--info {
+	background-color: rgba(6, 182, 212, 0.15);
+	color: var(--ds-color-info);
+}
+
+.badge--dot {
+	padding: 0;
+	width: 0.5rem;
+	height: 0.5rem;
+	border-radius: 50%;
+}

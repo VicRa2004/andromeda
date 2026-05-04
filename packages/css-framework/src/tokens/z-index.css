@@ -1,0 +1,15 @@
+/* @layer tokens */
+
+:root {
+	/* Z-Index Scale */
+	--ds-z-hide: -1;
+	--ds-z-base: 0;
+	--ds-z-elevated: 10;
+	--ds-z-dropdown: 100;
+	--ds-z-sticky: 200;
+	--ds-z-overlay: 300;
+	--ds-z-modal: 400;
+	--ds-z-popover: 500;
+	--ds-z-toast: 600;
+	--ds-z-tooltip: 700;
+}

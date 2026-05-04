@@ -1,0 +1,62 @@
+/* @layer components */
+
+.radio {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--ds-space-2);
+	cursor: pointer;
+}
+
+.radio__input {
+	appearance: none;
+	margin: 0;
+	width: 1.25rem;
+	height: 1.25rem;
+	border: 1px solid var(--ds-color-border);
+	border-radius: 50%;
+	background-color: var(--ds-color-surface);
+	display: grid;
+	place-content: center;
+	transition: var(--ds-transition-fast);
+	cursor: pointer;
+}
+
+.radio__input::before {
+	content: "";
+	width: 0.625rem;
+	height: 0.625rem;
+	border-radius: 50%;
+	transform: scale(0);
+	transition: 120ms transform ease-in-out;
+	background-color: var(--ds-color-background);
+}
+
+.radio__input:checked {
+	background-color: var(--ds-color-primary);
+	border-color: var(--ds-color-primary);
+}
+
+.radio__input:checked::before {
+	transform: scale(1);
+}
+
+.radio__input:focus-visible {
+	outline: 2px solid var(--ds-color-interaction-focus-ring);
+	outline-offset: 2px;
+}
+
+.radio__input:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.radio__input:disabled ~ .radio__label {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.radio__label {
+	color: var(--ds-color-text);
+	font-size: var(--ds-font-size-sm);
+	user-select: none;
+}

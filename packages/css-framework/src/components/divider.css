@@ -1,0 +1,22 @@
+/* @layer components */
+
+.divider {
+	display: block;
+	flex: 1 1 0%;
+	height: 1px;
+	width: 100%;
+	margin: var(--ds-space-4) 0;
+	background-color: var(--ds-color-border);
+	border: none;
+}
+
+.divider--vertical {
+	height: auto;
+	width: 1px;
+	margin: 0 var(--ds-space-4);
+	align-self: stretch;
+}
+
+.divider--transparent {
+	background-color: transparent;
+}

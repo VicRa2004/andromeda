@@ -1,0 +1,51 @@
+/* @layer components */
+
+.table-container {
+	width: 100%;
+	overflow-x: auto;
+	border-radius: var(--ds-border-radius-md, 6px);
+	border: 1px solid var(--ds-color-border);
+}
+
+.table {
+	width: 100%;
+	border-collapse: collapse;
+	text-align: left;
+	font-size: var(--ds-font-size-sm);
+	color: var(--ds-color-text);
+}
+
+.table__head {
+	background-color: var(--ds-color-surface);
+	border-bottom: 2px solid var(--ds-color-border);
+}
+
+.table__head-cell {
+	padding: var(--ds-space-3) var(--ds-space-4);
+	font-weight: var(--ds-font-weight-bold);
+	color: var(--ds-color-text-secondary);
+}
+
+.table__body .table__row {
+	border-bottom: 1px solid var(--ds-color-border);
+	transition: background-color var(--ds-transition-fast);
+}
+
+.table__body .table__row:last-child {
+	border-bottom: none;
+}
+
+.table__cell {
+	padding: var(--ds-space-3) var(--ds-space-4);
+	vertical-align: middle;
+}
+
+/* Hoverable rows */
+.table--hoverable .table__body .table__row:hover {
+	background-color: var(--ds-color-surface);
+}
+
+/* Striped rows */
+.table--striped .table__body .table__row:nth-child(even) {
+	background-color: var(--ds-color-background);
+}

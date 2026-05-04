@@ -1,0 +1,33 @@
+/* @layer components */
+
+.spinner {
+	display: inline-block;
+	width: 1.5rem;
+	height: 1.5rem;
+	border: 3px solid rgba(0, 0, 0, 0.1);
+	border-top-color: var(--ds-color-primary);
+	border-radius: 50%;
+	animation: dsSpin 1s linear infinite;
+}
+
+.spinner--sm {
+	width: 1rem;
+	height: 1rem;
+	border-width: 2px;
+}
+
+.spinner--lg {
+	width: 2.5rem;
+	height: 2.5rem;
+	border-width: 4px;
+}
+
+.spinner--white {
+	border-color: rgba(255, 255, 255, 0.3);
+	border-top-color: white;
+}
+
+[data-theme="dark"] .spinner:not(.spinner--white) {
+	border-color: rgba(255, 255, 255, 0.1);
+	border-top-color: var(--ds-color-primary);
+}
