@@ -24,3 +24,6 @@ export * from "./components/Toast";
 export * from "./components/Avatar";
 export * from "./components/Divider";
 export * from "./components/Table";
+
+// Utilities
+export * from "./components/ThemeProvider";
