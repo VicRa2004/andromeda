@@ -24,7 +24,11 @@ export const Table = ({
 		.join(" ");
 
 	return (
-		<div className={["table-container", containerClassName].filter(Boolean).join(" ")}>
+		<div
+			className={["table-container", containerClassName]
+				.filter(Boolean)
+				.join(" ")}
+		>
 			<table className={tableClasses} {...props}>
 				{children}
 			</table>
@@ -36,35 +40,50 @@ export const TableHead = ({
 	className = "",
 	...props
 }: HTMLAttributes<HTMLTableSectionElement>) => (
-	<thead className={["table__head", className].filter(Boolean).join(" ")} {...props} />
+	<thead
+		className={["table__head", className].filter(Boolean).join(" ")}
+		{...props}
+	/>
 );
 
 export const TableBody = ({
 	className = "",
 	...props
 }: HTMLAttributes<HTMLTableSectionElement>) => (
-	<tbody className={["table__body", className].filter(Boolean).join(" ")} {...props} />
+	<tbody
+		className={["table__body", className].filter(Boolean).join(" ")}
+		{...props}
+	/>
 );
 
 export const TableRow = ({
 	className = "",
 	...props
 }: HTMLAttributes<HTMLTableRowElement>) => (
-	<tr className={["table__row", className].filter(Boolean).join(" ")} {...props} />
+	<tr
+		className={["table__row", className].filter(Boolean).join(" ")}
+		{...props}
+	/>
 );
 
 export const TableHeadCell = ({
 	className = "",
 	...props
 }: ThHTMLAttributes<HTMLTableCellElement>) => (
-	<th className={["table__head-cell", className].filter(Boolean).join(" ")} {...props} />
+	<th
+		className={["table__head-cell", className].filter(Boolean).join(" ")}
+		{...props}
+	/>
 );
 
 export const TableCell = ({
 	className = "",
 	...props
 }: TdHTMLAttributes<HTMLTableCellElement>) => (
-	<td className={["table__cell", className].filter(Boolean).join(" ")} {...props} />
+	<td
+		className={["table__cell", className].filter(Boolean).join(" ")}
+		{...props}
+	/>
 );
 
 Table.Head = TableHead;

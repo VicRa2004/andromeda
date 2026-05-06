@@ -36,7 +36,10 @@ export const SelectNative = forwardRef<HTMLSelectElement, SelectProps>(
 				{label && (
 					<label
 						htmlFor={generatedId}
-						className={["select__label", required ? "select__label--required" : ""]
+						className={[
+							"select__label",
+							required ? "select__label--required" : "",
+						]
 							.filter(Boolean)
 							.join(" ")}
 					>

@@ -21,11 +21,6 @@ export const Spinner = ({
 		.join(" ");
 
 	return (
-		<div
-			className={classes}
-			role="status"
-			aria-label="Loading"
-			{...props}
-		/>
+		<div className={classes} role="status" aria-label="Loading" {...props} />
 	);
 };

@@ -24,7 +24,9 @@ const meta = {
 } satisfies Meta<typeof Modal>;
 
 export default meta;
-type Story = StoryObj<Omit<React.ComponentProps<typeof Modal>, "isOpen" | "onClose">>;
+type Story = StoryObj<
+	Omit<React.ComponentProps<typeof Modal>, "isOpen" | "onClose">
+>;
 
 // Usamos un componente funcional para la story para manejar el estado de isOpen
 const ModalStory = (args: any) => {
@@ -42,11 +44,18 @@ const ModalStory = (args: any) => {
 					<Modal.CloseButton onClick={() => setIsOpen(false)} />
 				</Modal.Header>
 				<Modal.Body>
-					<p>This is the content of the modal. You can place forms, text, or any other elements here.</p>
+					<p>
+						This is the content of the modal. You can place forms, text, or any
+						other elements here.
+					</p>
 				</Modal.Body>
 				<Modal.Footer>
-					<button type="button" onClick={() => setIsOpen(false)}>Close</button>
-					<button type="button" style={{ marginLeft: "8px" }}>Save Changes</button>
+					<button type="button" onClick={() => setIsOpen(false)}>
+						Close
+					</button>
+					<button type="button" style={{ marginLeft: "8px" }}>
+						Save Changes
+					</button>
 				</Modal.Footer>
 			</Modal>
 		</div>

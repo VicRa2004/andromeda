@@ -21,7 +21,8 @@
 .select__field {
 	appearance: none;
 	width: 100%;
-	padding: var(--ds-space-2) var(--ds-space-8) var(--ds-space-2) var(--ds-space-3);
+	padding: var(--ds-space-2) var(--ds-space-8) var(--ds-space-2)
+		var(--ds-space-3);
 	font-size: var(--ds-font-size-md);
 	line-height: 1.5;
 	color: var(--ds-color-text);

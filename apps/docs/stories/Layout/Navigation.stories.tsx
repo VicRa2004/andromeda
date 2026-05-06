@@ -27,7 +27,9 @@ export const Horizontal: Story = {
 		<Navigation {...args}>
 			<Navigation.List>
 				<Navigation.Item>
-					<Navigation.Link href="#" isActive>Dashboard</Navigation.Link>
+					<Navigation.Link href="#" isActive>
+						Dashboard
+					</Navigation.Link>
 				</Navigation.Item>
 				<Navigation.Item>
 					<Navigation.Link href="#">Projects</Navigation.Link>
@@ -48,13 +50,17 @@ export const Vertical: Story = {
 		<Navigation {...args} style={{ width: "200px" }}>
 			<Navigation.List>
 				<Navigation.Item>
-					<Navigation.Link href="#" isActive>Overview</Navigation.Link>
+					<Navigation.Link href="#" isActive>
+						Overview
+					</Navigation.Link>
 				</Navigation.Item>
 				<Navigation.Item>
 					<Navigation.Link href="#">Settings</Navigation.Link>
 				</Navigation.Item>
 				<Navigation.Item>
-					<Navigation.Link href="#" disabled>Billing (Coming Soon)</Navigation.Link>
+					<Navigation.Link href="#" disabled>
+						Billing (Coming Soon)
+					</Navigation.Link>
 				</Navigation.Item>
 			</Navigation.List>
 		</Navigation>
@@ -75,7 +81,9 @@ export const Breadcrumb: Story = {
 					<Navigation.Link href="#">Settings</Navigation.Link>
 				</Navigation.Item>
 				<Navigation.Item>
-					<Navigation.Link href="#" isActive aria-current="page">Profile</Navigation.Link>
+					<Navigation.Link href="#" isActive aria-current="page">
+						Profile
+					</Navigation.Link>
 				</Navigation.Item>
 			</Navigation.List>
 		</Navigation>

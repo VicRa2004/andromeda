@@ -1,6 +1,7 @@
 import type { HTMLAttributes, ReactNode } from "react";
 
-export interface ToastProps extends Omit<HTMLAttributes<HTMLDivElement>, "title"> {
+export interface ToastProps
+	extends Omit<HTMLAttributes<HTMLDivElement>, "title"> {
 	title?: ReactNode;
 	description?: ReactNode;
 	onClose?: () => void;
@@ -20,9 +21,7 @@ export const Toast = ({
 		<div className={classes} role="alert" {...props}>
 			<div className="toast__content">
 				{title && <div className="toast__title">{title}</div>}
-				{description && (
-					<div className="toast__description">{description}</div>
-				)}
+				{description && <div className="toast__description">{description}</div>}
 				{children}
 			</div>
 			{onClose && (

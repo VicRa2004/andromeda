@@ -19,7 +19,9 @@ export const Default: Story = {
 	},
 	render: (args) => (
 		<Select {...args} style={{ minWidth: "200px" }}>
-			<option value="" disabled selected>Select a country</option>
+			<option value="" disabled selected>
+				Select a country
+			</option>
 			<option value="us">United States</option>
 			<option value="ca">Canada</option>
 			<option value="mx">Mexico</option>
@@ -49,7 +51,9 @@ export const Disabled: Story = {
 	},
 	render: (args) => (
 		<Select {...args} style={{ minWidth: "200px" }}>
-			<option value="en" selected>English</option>
+			<option value="en" selected>
+				English
+			</option>
 			<option value="es">Spanish</option>
 		</Select>
 	),

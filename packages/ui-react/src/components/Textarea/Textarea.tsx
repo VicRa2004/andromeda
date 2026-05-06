@@ -1,6 +1,7 @@
 import { forwardRef, type TextareaHTMLAttributes } from "react";
 
-export interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
+export interface TextareaProps
+	extends TextareaHTMLAttributes<HTMLTextAreaElement> {
 	label?: string;
 	error?: string;
 	helpText?: string;
@@ -37,7 +38,10 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
 				{label && (
 					<label
 						htmlFor={generatedId}
-						className={["textarea__label", required ? "textarea__label--required" : ""]
+						className={[
+							"textarea__label",
+							required ? "textarea__label--required" : "",
+						]
 							.filter(Boolean)
 							.join(" ")}
 					>

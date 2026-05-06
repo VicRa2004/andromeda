@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Alert } from "@andromeda/ui-react";
+import { Info, CheckCircle, TriangleAlert, CircleX } from "lucide-react";
 
 const meta = {
 	title: "Feedback/Alert",
@@ -25,7 +26,9 @@ export const Default: Story = {
 	},
 	render: (args) => (
 		<Alert {...args}>
-			<Alert.Icon>ℹ️</Alert.Icon>
+			<Alert.Icon>
+				<Info size={18} />
+			</Alert.Icon>
 			<Alert.Content>
 				<Alert.Title>Information</Alert.Title>
 				<Alert.Description>
@@ -42,7 +45,9 @@ export const Success: Story = {
 	},
 	render: (args) => (
 		<Alert {...args}>
-			<Alert.Icon>✅</Alert.Icon>
+			<Alert.Icon>
+				<CheckCircle size={18} />
+			</Alert.Icon>
 			<Alert.Content>
 				<Alert.Title>Success!</Alert.Title>
 				<Alert.Description>
@@ -59,11 +64,14 @@ export const Warning: Story = {
 	},
 	render: (args) => (
 		<Alert {...args}>
-			<Alert.Icon>⚠️</Alert.Icon>
+			<Alert.Icon>
+				<TriangleAlert size={18} />
+			</Alert.Icon>
 			<Alert.Content>
 				<Alert.Title>Warning</Alert.Title>
 				<Alert.Description>
-					Your subscription is expiring in 3 days. Please renew to avoid interruption.
+					Your subscription is expiring in 3 days. Please renew to avoid
+					interruption.
 				</Alert.Description>
 			</Alert.Content>
 		</Alert>
@@ -76,7 +84,9 @@ export const ErrorAlert: Story = {
 	},
 	render: (args) => (
 		<Alert {...args}>
-			<Alert.Icon>❌</Alert.Icon>
+			<Alert.Icon>
+				<CircleX size={18} />
+			</Alert.Icon>
 			<Alert.Content>
 				<Alert.Title>Action Required</Alert.Title>
 				<Alert.Description>

@@ -51,9 +51,7 @@ export const Outlined: Story = {
 				<Card.Title>Outlined Card</Card.Title>
 			</Card.Header>
 			<Card.Body>
-				<Card.Description>
-					This is an outlined card variant.
-				</Card.Description>
+				<Card.Description>This is an outlined card variant.</Card.Description>
 			</Card.Body>
 			<Card.Footer>
 				<button>Action 1</button>

@@ -18,7 +18,9 @@ export const Default: Story = {
 		<Header {...args}>
 			<Header.Logo href="#">Andromeda</Header.Logo>
 			<Header.Nav>
-				<Header.Link href="#" isActive>Home</Header.Link>
+				<Header.Link href="#" isActive>
+					Home
+				</Header.Link>
 				<Header.Link href="#">About</Header.Link>
 				<Header.Link href="#">Contact</Header.Link>
 			</Header.Nav>
@@ -38,7 +40,9 @@ export const Inverted: Story = {
 		<Header {...args}>
 			<Header.Logo href="#">Andromeda</Header.Logo>
 			<Header.Nav>
-				<Header.Link href="#" isActive>Home</Header.Link>
+				<Header.Link href="#" isActive>
+					Home
+				</Header.Link>
 				<Header.Link href="#">About</Header.Link>
 				<Header.Link href="#">Contact</Header.Link>
 			</Header.Nav>
