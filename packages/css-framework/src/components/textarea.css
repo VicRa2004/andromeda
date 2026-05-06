@@ -22,7 +22,7 @@
 	border: 1px solid var(--ds-color-border);
 	border-radius: var(--ds-border-radius-md, 6px);
 	transition: var(--ds-transition-fast);
-	resize: vertical;
+	resize: none;
 	min-height: 80px;
 	font-family: inherit;
 }

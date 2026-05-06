@@ -9,6 +9,10 @@
 
 .switch__input {
 	appearance: none;
+	margin: 0;
+	padding: 0;
+	border: none;
+	box-sizing: border-box;
 	width: 2.5rem;
 	height: 1.25rem;
 	background-color: var(--ds-color-gray-300);
@@ -21,7 +25,7 @@
 .switch__input::before {
 	content: "";
 	position: absolute;
-	top: 2px;
+	top: calc(50% - 0.5rem);
 	left: 2px;
 	width: 1rem;
 	height: 1rem;

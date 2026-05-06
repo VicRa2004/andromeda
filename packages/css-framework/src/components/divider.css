@@ -13,6 +13,7 @@
 .divider--vertical {
 	height: auto;
 	width: 1px;
+	flex: 0 0 1px;
 	margin: 0 var(--ds-space-4);
 	align-self: stretch;
 }
