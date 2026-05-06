@@ -1,58 +1,121 @@
 /* @layer components */
 
+/**
+ * Textarea component - BEM structure
+ * Block: .textarea
+ * Modifiers: --error, --disabled
+ * Elements: --wrapper, --label, --error-message, --help
+ */
+
 .textarea {
 	display: flex;
 	flex-direction: column;
+	gap: var(--ds-space-2);
+}
+
+.textarea__wrapper {
+	display: flex;
+	flex-direction: column;
 	gap: var(--ds-space-1);
+	position: relative;
 }
 
 .textarea__label {
+	display: block;
 	font-size: var(--ds-font-size-sm);
 	font-weight: var(--ds-font-weight-medium);
 	color: var(--ds-color-text);
 }
 
-.textarea__field {
-	width: 100%;
-	padding: var(--ds-space-2) var(--ds-space-3);
-	font-size: var(--ds-font-size-md);
-	line-height: 1.5;
-	color: var(--ds-color-text);
-	background-color: var(--ds-color-surface);
-	border: 1px solid var(--ds-color-border);
-	border-radius: var(--ds-border-radius-md, 6px);
-	transition: var(--ds-transition-fast);
-	resize: none;
-	min-height: 80px;
-	font-family: inherit;
+.textarea__label--required::after {
+	content: "*";
+	margin-left: var(--ds-space-1);
+	color: var(--ds-color-error);
 }
 
-.textarea__field:hover {
-	border-color: var(--ds-color-border-light);
+.textarea__field {
+	display: block;
+	width: 100%;
+	padding: var(--ds-space-3) var(--ds-space-4);
+	font-family: var(--ds-font-family-base);
+	font-size: var(--ds-font-size-base);
+	line-height: var(--ds-line-height-normal);
+	color: var(--ds-color-text);
+	background-color: var(--ds-color-background);
+	border: 1px solid var(--ds-color-border);
+	border-radius: var(--ds-radius-md);
+	transition:
+		border-color var(--ds-transition-fast),
+		box-shadow var(--ds-transition-fast),
+		background-color var(--ds-transition-fast);
+	resize: none;
+	min-height: 80px;
+}
+
+.textarea__field::placeholder {
+	color: var(--ds-color-text-tertiary);
 }
 
 .textarea__field:focus {
 	outline: none;
 	border-color: var(--ds-color-primary);
-	box-shadow: 0 0 0 2px var(--ds-color-primary-light);
-}
-
-.textarea__field:disabled {
-	opacity: 0.5;
-	cursor: not-allowed;
+	box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 	background-color: var(--ds-color-background);
 }
 
+.textarea__field:disabled {
+	background-color: var(--ds-color-surface);
+	color: var(--ds-color-text-tertiary);
+	cursor: not-allowed;
+	border-color: var(--ds-color-border);
+	opacity: 0.6;
+}
+
+/* Error state modifier */
 .textarea--error .textarea__field {
 	border-color: var(--ds-color-error);
+	background-color: rgba(239, 68, 68, 0.02);
 }
 
 .textarea--error .textarea__field:focus {
-	box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
+	border-color: var(--ds-color-error);
+	box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
 }
 
-.textarea__error-message {
+.textarea--error .textarea__label {
 	color: var(--ds-color-error);
+}
+
+/* Error message */
+.textarea__error-message {
 	font-size: var(--ds-font-size-sm);
+	color: var(--ds-color-error);
+	margin-top: var(--ds-space-1);
+	display: flex;
+	align-items: center;
+	gap: var(--ds-space-1);
+}
+
+/* Success state modifier (optional) */
+.textarea--success .textarea__field {
+	border-color: var(--ds-color-success);
+	background-color: rgba(16, 185, 129, 0.02);
+}
+
+.textarea--success .textarea__field:focus {
+	border-color: var(--ds-color-success);
+	box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+/* Readonly state */
+.textarea__field:read-only {
+	background-color: var(--ds-color-surface);
+	cursor: default;
+}
+
+/* Help text */
+.textarea__help {
+	font-size: var(--ds-font-size-xs);
+	color: var(--ds-color-text-secondary);
 	margin-top: var(--ds-space-1);
 }
