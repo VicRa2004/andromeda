@@ -20,6 +20,10 @@ const meta = {
 		center: {
 			control: "boolean",
 		},
+		variant: {
+			control: "radio",
+			options: ["default", "primary", "secondary"],
+		},
 	},
 } satisfies Meta<typeof Modal>;
 
@@ -61,7 +65,15 @@ const ModalStory = (args: any) => {
 };
 
 export const Default: Story = {
-	render: (args) => <ModalStory {...args} />,
+	render: (args) => <ModalStory {...args} variant="default" />,
+};
+
+export const Primary: Story = {
+	render: (args) => <ModalStory {...args} variant="primary" />,
+};
+
+export const Secondary: Story = {
+	render: (args) => <ModalStory {...args} variant="secondary" />,
 };
 
 export const Small: Story = {

@@ -15,6 +15,10 @@ const meta = {
 		striped: {
 			control: "boolean",
 		},
+		variant: {
+			control: "radio",
+			options: ["default", "primary", "secondary"],
+		},
 	},
 } satisfies Meta<typeof Table>;
 
@@ -55,6 +59,25 @@ export const Default: Story = {
 	args: {
 		hoverable: true,
 		striped: false,
+		variant: "default",
+	},
+	render: renderTable,
+};
+
+export const Primary: Story = {
+	args: {
+		hoverable: true,
+		striped: false,
+		variant: "primary",
+	},
+	render: renderTable,
+};
+
+export const Secondary: Story = {
+	args: {
+		hoverable: true,
+		striped: false,
+		variant: "secondary",
 	},
 	render: renderTable,
 };
@@ -63,6 +86,7 @@ export const Striped: Story = {
 	args: {
 		hoverable: false,
 		striped: true,
+		variant: "default",
 	},
 	render: renderTable,
 };
@@ -71,6 +95,7 @@ export const StripedHoverable: Story = {
 	args: {
 		hoverable: true,
 		striped: true,
+		variant: "default",
 	},
 	render: renderTable,
 };

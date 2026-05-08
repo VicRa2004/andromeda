@@ -6,6 +6,7 @@ export interface ModalProps extends HTMLAttributes<HTMLDivElement> {
 	size?: "sm" | "md" | "lg" | "xl";
 	fullscreen?: boolean;
 	center?: boolean;
+	variant?: "default" | "primary" | "secondary";
 }
 
 export const Modal = ({
@@ -14,6 +15,7 @@ export const Modal = ({
 	size,
 	fullscreen,
 	center = true,
+	variant = "default",
 	className = "",
 	children,
 	...props
@@ -43,6 +45,7 @@ export const Modal = ({
 		size ? `modal--${size}` : "",
 		fullscreen ? "modal--fullscreen" : "",
 		center ? "modal--center" : "",
+		variant !== "default" ? `modal--${variant}` : "",
 		className,
 	]
 		.filter(Boolean)

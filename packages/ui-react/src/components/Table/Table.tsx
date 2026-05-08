@@ -3,12 +3,14 @@ import type { HTMLAttributes, TdHTMLAttributes, ThHTMLAttributes } from "react";
 export interface TableProps extends HTMLAttributes<HTMLTableElement> {
 	hoverable?: boolean;
 	striped?: boolean;
+	variant?: "default" | "primary" | "secondary";
 	containerClassName?: string;
 }
 
 export const Table = ({
 	hoverable,
 	striped,
+	variant = "default",
 	className = "",
 	containerClassName = "",
 	children,
@@ -18,6 +20,7 @@ export const Table = ({
 		"table",
 		hoverable ? "table--hoverable" : "",
 		striped ? "table--striped" : "",
+		variant !== "default" ? `table--${variant}` : "",
 		className,
 	]
 		.filter(Boolean)

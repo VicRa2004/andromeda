@@ -140,6 +140,19 @@
 	background-color: var(--ds-color-primary-alpha-5);
 }
 
+.table--secondary .table__head {
+	background-color: var(--ds-color-secondary-alpha-10);
+	border-bottom: 2px solid var(--ds-color-secondary);
+}
+
+.table--secondary .table__head-cell {
+	color: var(--ds-color-secondary-dark);
+}
+
+.table--secondary.table--hoverable .table__body .table__row:hover {
+	background-color: var(--ds-color-secondary-alpha-5);
+}
+
 /* =========================================================================
    Responsive
    ========================================================================= */
