@@ -1,56 +1,200 @@
 /* @layer components */
 
+/**
+ * Alert component - BEM structure
+ * Block: .alert
+ * Modifiers (variant): --info, --success, --warning, --error
+ * Modifiers (style): --filled
+ * Elements: --icon, --content, --title, --description, --close
+ *
+ * Design principles:
+ * - Default: subtle bg + left accent border for elegance
+ * - Filled: solid color background for high urgency
+ * - Title uses dark variant of semantic color for contrast
+ * - Description uses a slightly toned-down version
+ * - Proper padding and spacing via tokens
+ * - Rounded corners for modern feel
+ */
+
 .alert {
 	display: flex;
 	align-items: flex-start;
 	gap: var(--ds-space-3);
-	padding: var(--ds-space-4);
-	border-radius: var(--ds-radius-md);
+	padding: var(--ds-space-4) var(--ds-space-5);
+	border-radius: var(--ds-radius-lg);
 	border: 1px solid transparent;
-	font-size: var(--ds-font-size-sm);
-	line-height: 1.5;
+	border-left: 4px solid transparent;
+	font: var(--ds-text-body-sm);
+	line-height: var(--ds-line-height-normal);
+	transition:
+		background-color var(--ds-transition-fast),
+		border-color var(--ds-transition-fast);
 }
+
+/* =========================================================================
+   Elements
+   ========================================================================= */
 
 .alert__icon {
 	flex-shrink: 0;
-	margin-top: 2px;
+	margin-top: 1px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .alert__content {
 	flex: 1;
+	min-width: 0;
 }
 
 .alert__title {
-	font-weight: var(--ds-font-weight-bold);
+	font-weight: var(--ds-font-weight-semibold);
+	font-size: var(--ds-font-size-sm);
 	margin-bottom: var(--ds-space-1);
 }
 
 .alert__description {
-	color: inherit;
-	opacity: 0.9;
+	opacity: 0.85;
+	font-size: var(--ds-font-size-sm);
+	line-height: var(--ds-line-height-relaxed);
 }
 
-/* Variants — using semantic tokens */
+.alert__close {
+	flex-shrink: 0;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 28px;
+	height: 28px;
+	padding: 0;
+	margin: calc(var(--ds-space-1) * -1) calc(var(--ds-space-1) * -1) 0 0;
+	background-color: transparent;
+	border: none;
+	border-radius: var(--ds-radius-full);
+	cursor: pointer;
+	color: inherit;
+	opacity: 0.5;
+	transition:
+		opacity var(--ds-transition-fast),
+		background-color var(--ds-transition-fast);
+	font-size: 16px;
+	line-height: 1;
+}
+
+.alert__close:hover {
+	opacity: 0.8;
+	background-color: rgb(0 0 0 / 0.05);
+}
+
+.alert__close:focus-visible {
+	outline: var(--ds-focus-ring);
+	outline-offset: var(--ds-focus-ring-offset);
+}
+
+/* =========================================================================
+   Color variants — Subtle (default)
+   Uses: tinted bg + left accent border + dark color for text
+   ========================================================================= */
+
 .alert--info {
 	background-color: var(--ds-color-info-bg);
 	border-color: var(--ds-color-info-border);
+	border-left-color: var(--ds-color-info);
+	color: var(--ds-color-info-dark);
+}
+
+.alert--info .alert__icon {
 	color: var(--ds-color-info);
 }
 
 .alert--success {
 	background-color: var(--ds-color-success-bg);
 	border-color: var(--ds-color-success-border);
+	border-left-color: var(--ds-color-success);
+	color: var(--ds-color-success-dark);
+}
+
+.alert--success .alert__icon {
 	color: var(--ds-color-success);
 }
 
 .alert--warning {
 	background-color: var(--ds-color-warning-bg);
 	border-color: var(--ds-color-warning-border);
+	border-left-color: var(--ds-color-warning);
+	color: var(--ds-color-warning-dark);
+}
+
+.alert--warning .alert__icon {
 	color: var(--ds-color-warning);
 }
 
 .alert--error {
 	background-color: var(--ds-color-error-bg);
 	border-color: var(--ds-color-error-border);
+	border-left-color: var(--ds-color-error);
+	color: var(--ds-color-error-dark);
+}
+
+.alert--error .alert__icon {
 	color: var(--ds-color-error);
+}
+
+/* =========================================================================
+   Filled style — high urgency, solid color bg
+   ========================================================================= */
+
+.alert--filled.alert--info {
+	background-color: var(--ds-color-info);
+	border-color: var(--ds-color-info);
+	border-left-color: var(--ds-color-info-dark);
+	color: white;
+}
+
+.alert--filled.alert--info .alert__icon {
+	color: white;
+}
+
+.alert--filled.alert--success {
+	background-color: var(--ds-color-success);
+	border-color: var(--ds-color-success);
+	border-left-color: var(--ds-color-success-dark);
+	color: white;
+}
+
+.alert--filled.alert--success .alert__icon {
+	color: white;
+}
+
+.alert--filled.alert--warning {
+	background-color: var(--ds-color-warning);
+	border-color: var(--ds-color-warning);
+	border-left-color: var(--ds-color-warning-dark);
+	color: var(--ds-color-gray-900);
+}
+
+.alert--filled.alert--warning .alert__icon {
+	color: var(--ds-color-gray-900);
+}
+
+.alert--filled.alert--error {
+	background-color: var(--ds-color-error);
+	border-color: var(--ds-color-error);
+	border-left-color: var(--ds-color-error-dark);
+	color: white;
+}
+
+.alert--filled.alert--error .alert__icon {
+	color: white;
+}
+
+/* Filled close button uses white overlay */
+.alert--filled .alert__close:hover {
+	background-color: rgb(255 255 255 / 0.15);
+}
+
+/* Warning filled uses dark text, so dark overlay */
+.alert--filled.alert--warning .alert__close:hover {
+	background-color: rgb(0 0 0 / 0.1);
 }

@@ -1,5 +1,16 @@
 /* @layer components */
 
+/**
+ * Divider component - BEM structure
+ * Block: .divider
+ * Modifiers: --vertical, --transparent, --thick, --dashed, --gradient
+ *
+ * Design principles:
+ * - Visible but not intrusive — uses gradient fade for elegant appearance
+ * - Multiple variants for different contexts
+ * - Proper spacing via design tokens
+ */
+
 .divider {
 	display: block;
 	flex: 1 1 0%;
@@ -10,6 +21,10 @@
 	border: none;
 }
 
+/* =========================================================================
+   Orientation
+   ========================================================================= */
+
 .divider--vertical {
 	height: auto;
 	width: 1px;
@@ -18,6 +33,86 @@
 	align-self: stretch;
 }
 
+/* =========================================================================
+   Style modifiers
+   ========================================================================= */
+
+.divider--thick {
+	height: 2px;
+}
+
+.divider--thick.divider--vertical {
+	height: auto;
+	width: 2px;
+	flex: 0 0 2px;
+}
+
+.divider--dashed {
+	background-color: transparent;
+	background-image: repeating-linear-gradient(
+		90deg,
+		var(--ds-color-border) 0,
+		var(--ds-color-border) 6px,
+		transparent 6px,
+		transparent 12px
+	);
+}
+
+.divider--dashed.divider--vertical {
+	background-image: repeating-linear-gradient(
+		180deg,
+		var(--ds-color-border) 0,
+		var(--ds-color-border) 6px,
+		transparent 6px,
+		transparent 12px
+	);
+}
+
+.divider--gradient {
+	background: linear-gradient(
+		90deg,
+		transparent,
+		var(--ds-color-border) 20%,
+		var(--ds-color-border) 80%,
+		transparent
+	);
+}
+
+.divider--gradient.divider--vertical {
+	background: linear-gradient(
+		180deg,
+		transparent,
+		var(--ds-color-border) 20%,
+		var(--ds-color-border) 80%,
+		transparent
+	);
+}
+
+/* =========================================================================
+   Spacing modifiers
+   ========================================================================= */
+
+.divider--compact {
+	margin: var(--ds-space-2) 0;
+}
+
+.divider--compact.divider--vertical {
+	margin: 0 var(--ds-space-2);
+}
+
+.divider--spacious {
+	margin: var(--ds-space-8) 0;
+}
+
+.divider--spacious.divider--vertical {
+	margin: 0 var(--ds-space-8);
+}
+
+/* =========================================================================
+   Visibility modifiers
+   ========================================================================= */
+
 .divider--transparent {
 	background-color: transparent;
+	background-image: none;
 }

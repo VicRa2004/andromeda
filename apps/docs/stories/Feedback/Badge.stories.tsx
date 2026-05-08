@@ -11,9 +11,24 @@ const meta = {
 	argTypes: {
 		variant: {
 			control: "select",
-			options: ["primary", "secondary", "success", "warning", "error", "info"],
+			options: [
+				"primary",
+				"secondary",
+				"neutral",
+				"success",
+				"warning",
+				"error",
+				"info",
+			],
+		},
+		size: {
+			control: "select",
+			options: ["sm", "md", "lg"],
 		},
 		dot: {
+			control: "boolean",
+		},
+		outline: {
 			control: "boolean",
 		},
 	},
@@ -64,9 +79,67 @@ export const Info: Story = {
 	},
 };
 
+export const Sizes: Story = {
+	render: () => (
+		<div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+			<Badge variant="primary" size="sm">
+				Small
+			</Badge>
+			<Badge variant="primary" size="md">
+				Default
+			</Badge>
+			<Badge variant="primary" size="lg">
+				Large
+			</Badge>
+		</div>
+	),
+};
+
+export const Outline: Story = {
+	render: () => (
+		<div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+			<Badge variant="primary" outline>
+				Primary
+			</Badge>
+			<Badge variant="secondary" outline>
+				Secondary
+			</Badge>
+			<Badge variant="success" outline>
+				Success
+			</Badge>
+			<Badge variant="warning" outline>
+				Warning
+			</Badge>
+			<Badge variant="error" outline>
+				Error
+			</Badge>
+			<Badge variant="info" outline>
+				Info
+			</Badge>
+		</div>
+	),
+};
+
+export const AllVariants: Story = {
+	render: () => (
+		<div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+			<Badge variant="primary">Primary</Badge>
+			<Badge variant="secondary">Secondary</Badge>
+			<Badge variant="neutral">Neutral</Badge>
+			<Badge variant="success">Success</Badge>
+			<Badge variant="warning">Warning</Badge>
+			<Badge variant="error">Error</Badge>
+			<Badge variant="info">Info</Badge>
+		</div>
+	),
+};
+
 export const Dot: Story = {
-	args: {
-		variant: "error",
-		dot: true,
-	},
+	render: () => (
+		<div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+			<Badge variant="success" dot size="sm" />
+			<Badge variant="warning" dot />
+			<Badge variant="error" dot size="lg" />
+		</div>
+	),
 };

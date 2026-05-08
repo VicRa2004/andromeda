@@ -4,58 +4,79 @@
  * Card component - BEM structure
  * Block: .card
  * Modifiers: --elevated, --outlined, --flat
- * Elements: --header, --body, --footer
+ * Elements: --header, --body, --footer, --title, --subtitle, --description, --image
+ *
+ * Design principles:
+ * - Unified surface: header, body, footer share the same background
+ * - Visual separation via spacing, not borders
+ * - Modern radius (xl) for premium feel
+ * - Tinted shadows for depth
+ * - Smooth micro-animations on hover
  */
 
 .card {
 	display: flex;
 	flex-direction: column;
 	background-color: var(--ds-color-background);
-	border-radius: var(--ds-radius-lg);
+	border-radius: var(--ds-radius-xl);
 	overflow: hidden;
 	transition:
-		box-shadow var(--ds-transition-normal),
-		border-color var(--ds-transition-normal);
+		box-shadow var(--ds-transition-slow),
+		border-color var(--ds-transition-slow),
+		transform var(--ds-transition-slow);
 
 	/* Default: elevated variant */
-	box-shadow: var(--ds-shadow-md);
-	border: 1px solid var(--ds-color-border-light);
+	box-shadow:
+		0 1px 3px 0 rgb(0 0 0 / 0.06),
+		0 2px 8px -1px rgb(0 0 0 / 0.08);
+	border: 1px solid var(--ds-color-border);
 }
 
-/* Variant modifiers */
+/* =========================================================================
+   Variant modifiers
+   ========================================================================= */
+
 .card--elevated {
-	box-shadow: var(--ds-shadow-lg);
-	border: 1px solid var(--ds-color-border-light);
+	box-shadow:
+		0 4px 12px -2px rgb(0 0 0 / 0.08),
+		0 8px 24px -4px rgb(0 0 0 / 0.06);
+	border-color: var(--ds-color-border-light);
 
 	&:hover {
-		box-shadow: var(--ds-shadow-xl);
+		box-shadow:
+			0 8px 20px -4px rgb(0 0 0 / 0.1),
+			0 16px 40px -8px rgb(0 0 0 / 0.08);
+		transform: translateY(-2px);
 	}
 }
 
 .card--outlined {
 	box-shadow: none;
-	border: 2px solid var(--ds-color-border);
+	border: 1.5px solid var(--ds-color-border);
 
 	&:hover {
 		border-color: var(--ds-color-primary);
-		box-shadow: var(--ds-shadow-sm);
+		box-shadow: 0 0 0 3px var(--ds-color-primary-alpha-10);
 	}
 }
 
 .card--flat {
 	box-shadow: none;
-	border: 1px solid var(--ds-color-border);
+	border-color: transparent;
+	background-color: var(--ds-color-surface);
 
 	&:hover {
-		border-color: var(--ds-color-border);
+		background-color: var(--ds-color-background);
+		box-shadow: 0 2px 8px -2px rgb(0 0 0 / 0.06);
 	}
 }
 
-/* Elements */
+/* =========================================================================
+   Elements
+   ========================================================================= */
+
 .card__header {
-	padding: var(--ds-space-6);
-	border-bottom: 1px solid var(--ds-color-border-light);
-	background-color: var(--ds-color-surface);
+	padding: var(--ds-space-5) var(--ds-space-6) var(--ds-space-2);
 }
 
 .card__header:empty {
@@ -64,7 +85,7 @@
 
 .card__body {
 	flex: 1;
-	padding: var(--ds-space-6);
+	padding: var(--ds-space-2) var(--ds-space-6);
 	overflow: hidden;
 }
 
@@ -72,64 +93,107 @@
 	padding: 0;
 }
 
+/* When body is the first child (no header), add top padding */
+.card__body:first-child {
+	padding-top: var(--ds-space-5);
+}
+
+/* When body is the last child (no footer), add bottom padding */
+.card__body:last-child {
+	padding-bottom: var(--ds-space-5);
+}
+
 .card__footer {
-	padding: var(--ds-space-6);
-	border-top: 1px solid var(--ds-color-border-light);
-	background-color: var(--ds-color-surface);
+	padding: var(--ds-space-3) var(--ds-space-6) var(--ds-space-5);
 	display: flex;
-	gap: var(--ds-space-4);
+	gap: var(--ds-space-3);
 	justify-content: flex-end;
+	align-items: center;
 }
 
 .card__footer:empty {
 	display: none;
 }
 
-/* Typography within card */
+/* =========================================================================
+   Typography
+   ========================================================================= */
+
 .card__title {
-	font: var(--ds-text-heading-3);
+	font: var(--ds-text-heading-4);
 	color: var(--ds-color-text);
 	margin: 0;
+	letter-spacing: var(--ds-letter-spacing-tight);
 }
 
 .card__subtitle {
-	font-size: var(--ds-font-size-sm);
-	color: var(--ds-color-text-secondary);
+	font: var(--ds-text-caption);
+	color: var(--ds-color-text-tertiary);
 	margin: var(--ds-space-1) 0 0 0;
+	text-transform: uppercase;
+	letter-spacing: var(--ds-letter-spacing-wide);
 }
 
 .card__description {
-	font-size: var(--ds-font-size-base);
+	font: var(--ds-text-body);
 	color: var(--ds-color-text-secondary);
-	line-height: var(--ds-line-height-normal);
 	margin: 0;
 }
 
-/* Image support */
+/* =========================================================================
+   Image support
+   ========================================================================= */
+
 .card__image {
 	width: 100%;
 	height: auto;
 	display: block;
-	margin: -1px -1px 0 -1px;
-	border-radius: var(--ds-radius-lg) var(--ds-radius-lg) 0 0;
 	object-fit: cover;
+	aspect-ratio: 16 / 9;
 }
 
-/* Interactive state */
+/* When image is followed by header, give header extra top padding */
+.card__image + .card__header {
+	padding-top: var(--ds-space-5);
+}
+
+/* When image is followed directly by body (no header) */
+.card__image + .card__body {
+	padding-top: var(--ds-space-5);
+}
+
+/* =========================================================================
+   Interactive state (only for elevated + outlined)
+   ========================================================================= */
+
 .card--outlined:hover,
 .card--elevated:hover {
 	cursor: pointer;
 }
 
-/* Responsive adjustments */
+/* =========================================================================
+   Responsive adjustments
+   ========================================================================= */
+
 @media (max-width: 640px) {
-	.card__header,
-	.card__body,
-	.card__footer {
-		padding: var(--ds-space-4);
+	.card__header {
+		padding: var(--ds-space-4) var(--ds-space-4) var(--ds-space-2);
+	}
+
+	.card__body {
+		padding: var(--ds-space-2) var(--ds-space-4);
+	}
+
+	.card__body:first-child {
+		padding-top: var(--ds-space-4);
+	}
+
+	.card__body:last-child {
+		padding-bottom: var(--ds-space-4);
 	}
 
 	.card__footer {
+		padding: var(--ds-space-2) var(--ds-space-4) var(--ds-space-4);
 		flex-direction: column;
 		justify-content: stretch;
 	}

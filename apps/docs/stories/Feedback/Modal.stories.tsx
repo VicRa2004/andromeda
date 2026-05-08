@@ -53,9 +53,7 @@ const ModalStory = (args: any) => {
 					<button type="button" onClick={() => setIsOpen(false)}>
 						Close
 					</button>
-					<button type="button" style={{ marginLeft: "8px" }}>
-						Save Changes
-					</button>
+					<button type="button">Save Changes</button>
 				</Modal.Footer>
 			</Modal>
 		</div>

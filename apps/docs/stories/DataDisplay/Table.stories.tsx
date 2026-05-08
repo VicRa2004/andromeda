@@ -21,43 +21,42 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const sampleRows = [
+	{ id: 1, name: "John Doe", email: "john@example.com", role: "Admin" },
+	{ id: 2, name: "Jane Smith", email: "jane@example.com", role: "User" },
+	{ id: 3, name: "Bob Johnson", email: "bob@example.com", role: "Editor" },
+	{ id: 4, name: "Alice Brown", email: "alice@example.com", role: "Viewer" },
+];
+
+const renderTable = (args: any) => (
+	<Table {...args}>
+		<Table.Head>
+			<Table.Row>
+				<Table.HeadCell>ID</Table.HeadCell>
+				<Table.HeadCell>Name</Table.HeadCell>
+				<Table.HeadCell>Email</Table.HeadCell>
+				<Table.HeadCell>Role</Table.HeadCell>
+			</Table.Row>
+		</Table.Head>
+		<Table.Body>
+			{sampleRows.map((row) => (
+				<Table.Row key={row.id}>
+					<Table.Cell>{row.id}</Table.Cell>
+					<Table.Cell>{row.name}</Table.Cell>
+					<Table.Cell>{row.email}</Table.Cell>
+					<Table.Cell>{row.role}</Table.Cell>
+				</Table.Row>
+			))}
+		</Table.Body>
+	</Table>
+);
+
 export const Default: Story = {
 	args: {
 		hoverable: true,
 		striped: false,
 	},
-	render: (args) => (
-		<Table {...args}>
-			<Table.Head>
-				<Table.Row>
-					<Table.HeadCell>ID</Table.HeadCell>
-					<Table.HeadCell>Name</Table.HeadCell>
-					<Table.HeadCell>Email</Table.HeadCell>
-					<Table.HeadCell>Role</Table.HeadCell>
-				</Table.Row>
-			</Table.Head>
-			<Table.Body>
-				<Table.Row>
-					<Table.Cell>1</Table.Cell>
-					<Table.Cell>John Doe</Table.Cell>
-					<Table.Cell>john@example.com</Table.Cell>
-					<Table.Cell>Admin</Table.Cell>
-				</Table.Row>
-				<Table.Row>
-					<Table.Cell>2</Table.Cell>
-					<Table.Cell>Jane Smith</Table.Cell>
-					<Table.Cell>jane@example.com</Table.Cell>
-					<Table.Cell>User</Table.Cell>
-				</Table.Row>
-				<Table.Row>
-					<Table.Cell>3</Table.Cell>
-					<Table.Cell>Bob Johnson</Table.Cell>
-					<Table.Cell>bob@example.com</Table.Cell>
-					<Table.Cell>Editor</Table.Cell>
-				</Table.Row>
-			</Table.Body>
-		</Table>
-	),
+	render: renderTable,
 };
 
 export const Striped: Story = {
@@ -65,5 +64,13 @@ export const Striped: Story = {
 		hoverable: false,
 		striped: true,
 	},
-	render: Default.render,
+	render: renderTable,
+};
+
+export const StripedHoverable: Story = {
+	args: {
+		hoverable: true,
+		striped: true,
+	},
+	render: renderTable,
 };

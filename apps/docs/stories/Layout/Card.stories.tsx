@@ -65,7 +65,7 @@ export const Flat: Story = {
 		variant: "flat",
 	},
 	render: (args) => (
-		<Card {...args} style={{ maxWidth: "300px", backgroundColor: "#f4f4f5" }}>
+		<Card {...args} style={{ maxWidth: "300px" }}>
 			<Card.Header>
 				<Card.Title>Flat Card</Card.Title>
 			</Card.Header>

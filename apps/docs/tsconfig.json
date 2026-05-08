@@ -2,7 +2,14 @@
 	"extends": "../../tsconfig.json",
 	"compilerOptions": {
 		"jsx": "react-jsx",
-		"noEmit": true
+		"noEmit": true,
+		"baseUrl": ".",
+		"paths": {
+			"@andromeda/ui-react": ["../../packages/ui-react/src/index.ts"],
+			"@andromeda/css-framework": [
+				"../../packages/css-framework/src/index.d.ts"
+			]
+		}
 	},
 	"include": ["stories", ".storybook"],
 	"exclude": ["node_modules"]

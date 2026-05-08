@@ -96,3 +96,54 @@ export const ErrorAlert: Story = {
 		</Alert>
 	),
 };
+
+export const AllVariants: Story = {
+	render: () => (
+		<div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+			<Alert variant="info">
+				<Alert.Icon>
+					<Info size={18} />
+				</Alert.Icon>
+				<Alert.Content>
+					<Alert.Title>Information</Alert.Title>
+					<Alert.Description>
+						A new software update is available for download.
+					</Alert.Description>
+				</Alert.Content>
+			</Alert>
+			<Alert variant="success">
+				<Alert.Icon>
+					<CheckCircle size={18} />
+				</Alert.Icon>
+				<Alert.Content>
+					<Alert.Title>Success</Alert.Title>
+					<Alert.Description>
+						Your changes have been saved successfully.
+					</Alert.Description>
+				</Alert.Content>
+			</Alert>
+			<Alert variant="warning">
+				<Alert.Icon>
+					<TriangleAlert size={18} />
+				</Alert.Icon>
+				<Alert.Content>
+					<Alert.Title>Warning</Alert.Title>
+					<Alert.Description>
+						Your storage is almost full. Consider upgrading your plan.
+					</Alert.Description>
+				</Alert.Content>
+			</Alert>
+			<Alert variant="error">
+				<Alert.Icon>
+					<CircleX size={18} />
+				</Alert.Icon>
+				<Alert.Content>
+					<Alert.Title>Error</Alert.Title>
+					<Alert.Description>
+						Failed to connect to the server. Please try again later.
+					</Alert.Description>
+				</Alert.Content>
+			</Alert>
+		</div>
+	),
+};
