@@ -1,0 +1,258 @@
+/* @layer utilities — Position, Overflow, Visibility, Misc */
+
+/* Position */
+.static {
+	position: static;
+}
+.fixed {
+	position: fixed;
+}
+.absolute {
+	position: absolute;
+}
+.relative {
+	position: relative;
+}
+.sticky {
+	position: sticky;
+}
+
+/* Inset */
+.inset-0 {
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+.inset-auto {
+	top: auto;
+	right: auto;
+	bottom: auto;
+	left: auto;
+}
+.inset-x-0 {
+	left: 0;
+	right: 0;
+}
+.inset-y-0 {
+	top: 0;
+	bottom: 0;
+}
+.top-0 {
+	top: 0;
+}
+.top-auto {
+	top: auto;
+}
+.right-0 {
+	right: 0;
+}
+.right-auto {
+	right: auto;
+}
+.bottom-0 {
+	bottom: 0;
+}
+.bottom-auto {
+	bottom: auto;
+}
+.left-0 {
+	left: 0;
+}
+.left-auto {
+	left: auto;
+}
+
+/* Z-index */
+.z-0 {
+	z-index: 0;
+}
+.z-10 {
+	z-index: 10;
+}
+.z-20 {
+	z-index: 20;
+}
+.z-30 {
+	z-index: 30;
+}
+.z-40 {
+	z-index: 40;
+}
+.z-50 {
+	z-index: 50;
+}
+.z-auto {
+	z-index: auto;
+}
+
+/* Overflow */
+.overflow-auto {
+	overflow: auto;
+}
+.overflow-hidden {
+	overflow: hidden;
+}
+.overflow-visible {
+	overflow: visible;
+}
+.overflow-scroll {
+	overflow: scroll;
+}
+.overflow-x-auto {
+	overflow-x: auto;
+}
+.overflow-x-hidden {
+	overflow-x: hidden;
+}
+.overflow-x-scroll {
+	overflow-x: scroll;
+}
+.overflow-y-auto {
+	overflow-y: auto;
+}
+.overflow-y-hidden {
+	overflow-y: hidden;
+}
+.overflow-y-scroll {
+	overflow-y: scroll;
+}
+
+/* Visibility */
+.visible {
+	visibility: visible;
+}
+.invisible {
+	visibility: hidden;
+}
+.collapse {
+	visibility: collapse;
+}
+
+/* Screen reader only */
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border-width: 0;
+}
+
+.not-sr-only {
+	position: static;
+	width: auto;
+	height: auto;
+	padding: 0;
+	margin: 0;
+	overflow: visible;
+	clip: auto;
+	white-space: normal;
+}
+
+/* Cursor */
+.cursor-auto {
+	cursor: auto;
+}
+.cursor-default {
+	cursor: default;
+}
+.cursor-pointer {
+	cursor: pointer;
+}
+.cursor-wait {
+	cursor: wait;
+}
+.cursor-text {
+	cursor: text;
+}
+.cursor-move {
+	cursor: move;
+}
+.cursor-help {
+	cursor: help;
+}
+.cursor-not-allowed {
+	cursor: not-allowed;
+}
+.cursor-grab {
+	cursor: grab;
+}
+.cursor-grabbing {
+	cursor: grabbing;
+}
+
+/* Pointer events */
+.pointer-events-none {
+	pointer-events: none;
+}
+.pointer-events-auto {
+	pointer-events: auto;
+}
+
+/* User select */
+.select-none {
+	user-select: none;
+}
+.select-text {
+	user-select: text;
+}
+.select-all {
+	user-select: all;
+}
+.select-auto {
+	user-select: auto;
+}
+
+/* Scroll behavior */
+.scroll-auto {
+	scroll-behavior: auto;
+}
+.scroll-smooth {
+	scroll-behavior: smooth;
+}
+
+/* Object fit */
+.object-contain {
+	object-fit: contain;
+}
+.object-cover {
+	object-fit: cover;
+}
+.object-fill {
+	object-fit: fill;
+}
+.object-none {
+	object-fit: none;
+}
+.object-scale-down {
+	object-fit: scale-down;
+}
+
+/* List style */
+.list-none {
+	list-style-type: none;
+}
+.list-disc {
+	list-style-type: disc;
+}
+.list-decimal {
+	list-style-type: decimal;
+}
+.list-inside {
+	list-style-position: inside;
+}
+.list-outside {
+	list-style-position: outside;
+}
+
+/* Table layout */
+.table-auto {
+	table-layout: auto;
+}
+.table-fixed {
+	table-layout: fixed;
+}

@@ -4,18 +4,71 @@
  * Color tokens for Andromeda Design System
  * Includes light and dark theme variants using data-theme attribute
  *
+ * Architecture:
+ * 1. Primitive scales (primary, secondary, gray, semantic) — raw color values
+ * 2. Functional tokens — semantic aliases that components consume
+ * 3. Alpha tokens — transparent variants for hover/focus effects
+ * 4. Dark theme overrides — inverts all primitives + adjusts for contrast
+ *
  * Usage:
- * Light theme (default): [data-theme="light"]
+ * Light theme (default): :root or [data-theme="light"]
  * Dark theme: [data-theme="dark"]
  */
 
 :root {
-	/* Light theme - Primary brand color (neutral blue) */
-	--ds-color-primary: #2563eb;
-	--ds-color-primary-light: #3b82f6;
-	--ds-color-primary-dark: #1d4ed8;
+	/* ========================================================================
+	   PRIMARY — Blue
+	   ======================================================================== */
+	--ds-color-primary-50: #eff6ff;
+	--ds-color-primary-100: #dbeafe;
+	--ds-color-primary-200: #bfdbfe;
+	--ds-color-primary-300: #93c5fd;
+	--ds-color-primary-400: #60a5fa;
+	--ds-color-primary-500: #3b82f6;
+	--ds-color-primary-600: #2563eb;
+	--ds-color-primary-700: #1d4ed8;
+	--ds-color-primary-800: #1e40af;
+	--ds-color-primary-900: #1e3a8a;
 
-	/* Grayscale palette - Light theme */
+	/* Primary aliases (backward compatible) */
+	--ds-color-primary: var(--ds-color-primary-600);
+	--ds-color-primary-light: var(--ds-color-primary-400);
+	--ds-color-primary-dark: var(--ds-color-primary-700);
+
+	/* Primary alpha (for hover/focus/bg effects) */
+	--ds-color-primary-alpha-5: rgb(37 99 235 / 0.05);
+	--ds-color-primary-alpha-10: rgb(37 99 235 / 0.1);
+	--ds-color-primary-alpha-15: rgb(37 99 235 / 0.15);
+	--ds-color-primary-alpha-20: rgb(37 99 235 / 0.2);
+
+	/* ========================================================================
+	   SECONDARY — Violet
+	   ======================================================================== */
+	--ds-color-secondary-50: #f5f3ff;
+	--ds-color-secondary-100: #ede9fe;
+	--ds-color-secondary-200: #ddd6fe;
+	--ds-color-secondary-300: #c4b5fd;
+	--ds-color-secondary-400: #a78bfa;
+	--ds-color-secondary-500: #8b5cf6;
+	--ds-color-secondary-600: #7c3aed;
+	--ds-color-secondary-700: #6d28d9;
+	--ds-color-secondary-800: #5b21b6;
+	--ds-color-secondary-900: #4c1d95;
+
+	/* Secondary aliases */
+	--ds-color-secondary: var(--ds-color-secondary-600);
+	--ds-color-secondary-light: var(--ds-color-secondary-400);
+	--ds-color-secondary-dark: var(--ds-color-secondary-700);
+
+	/* Secondary alpha */
+	--ds-color-secondary-alpha-5: rgb(124 58 237 / 0.05);
+	--ds-color-secondary-alpha-10: rgb(124 58 237 / 0.1);
+	--ds-color-secondary-alpha-15: rgb(124 58 237 / 0.15);
+	--ds-color-secondary-alpha-20: rgb(124 58 237 / 0.2);
+
+	/* ========================================================================
+	   GRAYSCALE — Neutral
+	   ======================================================================== */
 	--ds-color-gray-50: #f9fafb;
 	--ds-color-gray-100: #f3f4f6;
 	--ds-color-gray-200: #e5e7eb;
@@ -28,36 +81,111 @@
 	--ds-color-gray-900: #111827;
 	--ds-color-gray-950: #030712;
 
-	/* Semantic colors - Light theme */
-	--ds-color-success: #10b981;
-	--ds-color-warning: #f59e0b;
-	--ds-color-error: #ef4444;
-	--ds-color-info: #06b6d4;
+	/* ========================================================================
+	   SEMANTIC — Status colors
+	   ======================================================================== */
 
-	/* Functional colors - Light theme */
+	/* Success */
+	--ds-color-success: #10b981;
+	--ds-color-success-light: #34d399;
+	--ds-color-success-dark: #059669;
+	--ds-color-success-bg: rgb(16 185 129 / 0.1);
+	--ds-color-success-border: rgb(16 185 129 / 0.2);
+
+	/* Warning */
+	--ds-color-warning: #f59e0b;
+	--ds-color-warning-light: #fbbf24;
+	--ds-color-warning-dark: #d97706;
+	--ds-color-warning-bg: rgb(245 158 11 / 0.1);
+	--ds-color-warning-border: rgb(245 158 11 / 0.2);
+
+	/* Error */
+	--ds-color-error: #ef4444;
+	--ds-color-error-light: #f87171;
+	--ds-color-error-dark: #dc2626;
+	--ds-color-error-bg: rgb(239 68 68 / 0.1);
+	--ds-color-error-border: rgb(239 68 68 / 0.2);
+
+	/* Info */
+	--ds-color-info: #06b6d4;
+	--ds-color-info-light: #22d3ee;
+	--ds-color-info-dark: #0891b2;
+	--ds-color-info-bg: rgb(6 182 212 / 0.1);
+	--ds-color-info-border: rgb(6 182 212 / 0.2);
+
+	/* ========================================================================
+	   FUNCTIONAL — Semantic aliases consumed by components
+	   ======================================================================== */
 	--ds-color-background: var(--ds-color-gray-50);
 	--ds-color-surface: var(--ds-color-gray-100);
 	--ds-color-text: var(--ds-color-gray-900);
 	--ds-color-text-secondary: var(--ds-color-gray-600);
 	--ds-color-text-tertiary: var(--ds-color-gray-500);
+	--ds-color-text-muted: var(--ds-color-gray-400);
 	--ds-color-border: var(--ds-color-gray-200);
 	--ds-color-border-light: var(--ds-color-gray-100);
 
-	/* Interactive states - Light theme */
+	/* Interactive states */
 	--ds-color-interaction-hover: var(--ds-color-primary-light);
 	--ds-color-interaction-active: var(--ds-color-primary-dark);
 	--ds-color-interaction-disabled: var(--ds-color-gray-300);
 	--ds-color-interaction-focus-ring: var(--ds-color-primary);
+
+	/* Overlay */
+	--ds-color-overlay: rgb(0 0 0 / 0.5);
+	--ds-color-spinner-track: rgb(0 0 0 / 0.1);
 }
 
-/* Dark theme overrides */
+/* ============================================================================
+   DARK THEME OVERRIDES
+   ============================================================================ */
+
 [data-theme="dark"] {
-	/* Dark theme - Primary brand color (brighter variant for contrast) */
+	/* Primary — brighter variants for dark backgrounds */
+	--ds-color-primary-50: #172554;
+	--ds-color-primary-100: #1e3a8a;
+	--ds-color-primary-200: #1e40af;
+	--ds-color-primary-300: #1d4ed8;
+	--ds-color-primary-400: #2563eb;
+	--ds-color-primary-500: #3b82f6;
+	--ds-color-primary-600: #60a5fa;
+	--ds-color-primary-700: #93c5fd;
+	--ds-color-primary-800: #bfdbfe;
+	--ds-color-primary-900: #dbeafe;
+
+	/* Primary aliases — adjusted for contrast on dark */
 	--ds-color-primary: #3b82f6;
 	--ds-color-primary-light: #60a5fa;
 	--ds-color-primary-dark: #2563eb;
 
-	/* Grayscale palette - Dark theme (inverted) */
+	/* Primary alpha — adjusted for dark backgrounds */
+	--ds-color-primary-alpha-5: rgb(59 130 246 / 0.05);
+	--ds-color-primary-alpha-10: rgb(59 130 246 / 0.1);
+	--ds-color-primary-alpha-15: rgb(59 130 246 / 0.15);
+	--ds-color-primary-alpha-20: rgb(59 130 246 / 0.2);
+
+	/* Secondary — brighter variants */
+	--ds-color-secondary-50: #2e1065;
+	--ds-color-secondary-100: #4c1d95;
+	--ds-color-secondary-200: #5b21b6;
+	--ds-color-secondary-300: #6d28d9;
+	--ds-color-secondary-400: #7c3aed;
+	--ds-color-secondary-500: #8b5cf6;
+	--ds-color-secondary-600: #a78bfa;
+	--ds-color-secondary-700: #c4b5fd;
+	--ds-color-secondary-800: #ddd6fe;
+	--ds-color-secondary-900: #ede9fe;
+
+	--ds-color-secondary: #8b5cf6;
+	--ds-color-secondary-light: #a78bfa;
+	--ds-color-secondary-dark: #7c3aed;
+
+	--ds-color-secondary-alpha-5: rgb(139 92 246 / 0.05);
+	--ds-color-secondary-alpha-10: rgb(139 92 246 / 0.1);
+	--ds-color-secondary-alpha-15: rgb(139 92 246 / 0.15);
+	--ds-color-secondary-alpha-20: rgb(139 92 246 / 0.2);
+
+	/* Grayscale — inverted */
 	--ds-color-gray-50: #030712;
 	--ds-color-gray-100: #111827;
 	--ds-color-gray-200: #1f2937;
@@ -70,24 +198,48 @@
 	--ds-color-gray-900: #f3f4f6;
 	--ds-color-gray-950: #f9fafb;
 
-	/* Semantic colors - Dark theme (adjusted for contrast) */
+	/* Semantic — adjusted for dark contrast */
 	--ds-color-success: #34d399;
-	--ds-color-warning: #fbbf24;
-	--ds-color-error: #f87171;
-	--ds-color-info: #22d3ee;
+	--ds-color-success-light: #6ee7b7;
+	--ds-color-success-dark: #10b981;
+	--ds-color-success-bg: rgb(52 211 153 / 0.1);
+	--ds-color-success-border: rgb(52 211 153 / 0.2);
 
-	/* Functional colors - Dark theme */
+	--ds-color-warning: #fbbf24;
+	--ds-color-warning-light: #fcd34d;
+	--ds-color-warning-dark: #f59e0b;
+	--ds-color-warning-bg: rgb(251 191 36 / 0.1);
+	--ds-color-warning-border: rgb(251 191 36 / 0.2);
+
+	--ds-color-error: #f87171;
+	--ds-color-error-light: #fca5a5;
+	--ds-color-error-dark: #ef4444;
+	--ds-color-error-bg: rgb(248 113 113 / 0.1);
+	--ds-color-error-border: rgb(248 113 113 / 0.2);
+
+	--ds-color-info: #22d3ee;
+	--ds-color-info-light: #67e8f9;
+	--ds-color-info-dark: #06b6d4;
+	--ds-color-info-bg: rgb(34 211 238 / 0.1);
+	--ds-color-info-border: rgb(34 211 238 / 0.2);
+
+	/* Functional — dark mode (grays auto-invert via references above) */
 	--ds-color-background: var(--ds-color-gray-50);
 	--ds-color-surface: var(--ds-color-gray-100);
 	--ds-color-text: var(--ds-color-gray-900);
 	--ds-color-text-secondary: var(--ds-color-gray-600);
 	--ds-color-text-tertiary: var(--ds-color-gray-500);
+	--ds-color-text-muted: var(--ds-color-gray-400);
 	--ds-color-border: var(--ds-color-gray-200);
 	--ds-color-border-light: var(--ds-color-gray-100);
 
-	/* Interactive states - Dark theme */
+	/* Interactive states — dark */
 	--ds-color-interaction-hover: var(--ds-color-primary-light);
 	--ds-color-interaction-active: var(--ds-color-primary-dark);
 	--ds-color-interaction-disabled: var(--ds-color-gray-400);
 	--ds-color-interaction-focus-ring: var(--ds-color-primary);
+
+	/* Overlay — dark */
+	--ds-color-overlay: rgb(0 0 0 / 0.7);
+	--ds-color-spinner-track: rgb(255 255 255 / 0.1);
 }

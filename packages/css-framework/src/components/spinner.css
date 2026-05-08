@@ -4,7 +4,7 @@
 	display: inline-block;
 	width: 1.5rem;
 	height: 1.5rem;
-	border: 3px solid rgba(0, 0, 0, 0.1);
+	border: 3px solid var(--ds-color-spinner-track);
 	border-top-color: var(--ds-color-primary);
 	border-radius: 50%;
 	animation: dsSpin 1s linear infinite;
@@ -25,9 +25,4 @@
 .spinner--white {
 	border-color: rgba(255, 255, 255, 0.3);
 	border-top-color: white;
-}
-
-[data-theme="dark"] .spinner:not(.spinner--white) {
-	border-color: rgba(255, 255, 255, 0.1);
-	border-top-color: var(--ds-color-primary);
 }

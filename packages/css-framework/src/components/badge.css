@@ -19,29 +19,38 @@
 }
 
 .badge--secondary {
+	background-color: var(--ds-color-secondary);
+	color: white;
+}
+
+.badge--neutral {
 	background-color: var(--ds-color-gray-100);
 	color: var(--ds-color-gray-800);
 	border-color: var(--ds-color-border);
 }
 
 .badge--success {
-	background-color: rgba(16, 185, 129, 0.15);
+	background-color: var(--ds-color-success-bg);
 	color: var(--ds-color-success);
+	border-color: var(--ds-color-success-border);
 }
 
 .badge--warning {
-	background-color: rgba(245, 158, 11, 0.15);
+	background-color: var(--ds-color-warning-bg);
 	color: var(--ds-color-warning);
+	border-color: var(--ds-color-warning-border);
 }
 
 .badge--error {
-	background-color: rgba(239, 68, 68, 0.15);
+	background-color: var(--ds-color-error-bg);
 	color: var(--ds-color-error);
+	border-color: var(--ds-color-error-border);
 }
 
 .badge--info {
-	background-color: rgba(6, 182, 212, 0.15);
+	background-color: var(--ds-color-info-bg);
 	color: var(--ds-color-info);
+	border-color: var(--ds-color-info-border);
 }
 
 .badge--dot {

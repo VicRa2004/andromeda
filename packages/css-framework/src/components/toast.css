@@ -19,7 +19,7 @@
 	background-color: var(--ds-color-surface);
 	color: var(--ds-color-text);
 	border: 1px solid var(--ds-color-border);
-	border-radius: var(--ds-border-radius-md, 6px);
+	border-radius: var(--ds-radius-md);
 	box-shadow: var(--ds-shadow-lg);
 	pointer-events: auto;
 	min-width: 300px;
@@ -47,7 +47,7 @@
 	color: var(--ds-color-text-secondary);
 	cursor: pointer;
 	padding: var(--ds-space-1);
-	border-radius: var(--ds-border-radius-sm);
+	border-radius: var(--ds-radius-sm);
 	transition: background-color var(--ds-transition-fast);
 }
 

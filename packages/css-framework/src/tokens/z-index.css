@@ -1,15 +1,23 @@
 /* @layer tokens */
 
+/**
+ * Z-Index scale for Andromeda Design System
+ * Single source of truth for all layering values
+ */
+
 :root {
-	/* Z-Index Scale */
+	/* Base z-index values */
 	--ds-z-hide: -1;
 	--ds-z-base: 0;
 	--ds-z-elevated: 10;
-	--ds-z-dropdown: 100;
-	--ds-z-sticky: 200;
-	--ds-z-overlay: 300;
-	--ds-z-modal: 400;
-	--ds-z-popover: 500;
-	--ds-z-toast: 600;
-	--ds-z-tooltip: 700;
+
+	/* Component z-index scale */
+	--ds-z-dropdown: 1000;
+	--ds-z-sticky: 1020;
+	--ds-z-fixed: 1030;
+	--ds-z-modal-backdrop: 1040;
+	--ds-z-modal: 1050;
+	--ds-z-popover: 1060;
+	--ds-z-toast: 1070;
+	--ds-z-tooltip: 1080;
 }

@@ -29,7 +29,7 @@
 	user-select: none;
 	-webkit-user-select: none;
 
-	/* Default: secondary variant */
+	/* Default: neutral variant */
 	background-color: var(--ds-color-surface);
 	color: var(--ds-color-text);
 	border-color: var(--ds-color-border);
@@ -55,7 +55,7 @@
 	&:hover {
 		background-color: var(--ds-color-primary-light);
 		border-color: var(--ds-color-primary-light);
-		box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+		box-shadow: 0 0 0 4px var(--ds-color-primary-alpha-15);
 	}
 
 	&:active {
@@ -78,23 +78,23 @@
 }
 
 .button--secondary {
-	background-color: var(--ds-color-surface);
-	color: var(--ds-color-text);
-	border-color: var(--ds-color-border);
+	background-color: var(--ds-color-secondary);
+	color: #ffffff;
+	border-color: var(--ds-color-secondary);
 
 	&:hover {
-		background-color: var(--ds-color-gray-200);
-		border-color: var(--ds-color-gray-300);
-		box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+		background-color: var(--ds-color-secondary-light);
+		border-color: var(--ds-color-secondary-light);
+		box-shadow: 0 0 0 4px var(--ds-color-secondary-alpha-15);
 	}
 
 	&:active {
-		background-color: var(--ds-color-gray-300);
-		border-color: var(--ds-color-gray-400);
+		background-color: var(--ds-color-secondary-dark);
+		border-color: var(--ds-color-secondary-dark);
 	}
 
 	&:focus-visible {
-		outline: 2px solid var(--ds-color-interaction-focus-ring);
+		outline: 2px solid var(--ds-color-secondary);
 		outline-offset: 2px;
 	}
 
@@ -113,12 +113,12 @@
 	border-color: var(--ds-color-primary);
 
 	&:hover {
-		background-color: rgba(37, 99, 235, 0.05);
+		background-color: var(--ds-color-primary-alpha-5);
 		border-color: var(--ds-color-primary-light);
 	}
 
 	&:active {
-		background-color: rgba(37, 99, 235, 0.1);
+		background-color: var(--ds-color-primary-alpha-10);
 		border-color: var(--ds-color-primary-dark);
 	}
 

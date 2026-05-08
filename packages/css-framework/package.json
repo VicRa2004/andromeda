@@ -1,6 +1,6 @@
 {
 	"name": "@andromeda/css-framework",
-	"version": "1.0.0",
+	"version": "0.1.0",
 	"description": "Core CSS framework for the Andromeda design system",
 	"license": "MIT",
 	"repository": {
@@ -16,6 +16,34 @@
 		".": {
 			"types": "./src/index.d.ts",
 			"default": "./src/index.css"
-		}
+		},
+		"./tokens": "./src/tokens/index.css",
+		"./reset": "./src/reset/normalize.css",
+		"./base": "./src/base/base.css",
+		"./layout": {
+			"default": "./src/layout/container.css"
+		},
+		"./utilities": "./src/utilities/utilities.css",
+		"./components/button": "./src/components/button.css",
+		"./components/input": "./src/components/input.css",
+		"./components/card": "./src/components/card.css",
+		"./components/modal": "./src/components/modal.css",
+		"./components/header": "./src/components/header.css",
+		"./components/navigation": "./src/components/navigation.css",
+		"./components/checkbox": "./src/components/checkbox.css",
+		"./components/radio": "./src/components/radio.css",
+		"./components/select": "./src/components/select.css",
+		"./components/switch": "./src/components/switch.css",
+		"./components/textarea": "./src/components/textarea.css",
+		"./components/alert": "./src/components/alert.css",
+		"./components/toast": "./src/components/toast.css",
+		"./components/badge": "./src/components/badge.css",
+		"./components/spinner": "./src/components/spinner.css",
+		"./components/avatar": "./src/components/avatar.css",
+		"./components/divider": "./src/components/divider.css",
+		"./components/table": "./src/components/table.css"
+	},
+	"scripts": {
+		"build": "bun run scripts/build.ts"
 	}
 }

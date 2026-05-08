@@ -98,7 +98,7 @@
 .navigation__link.is-active {
 	color: var(--ds-color-primary);
 	font-weight: var(--ds-font-weight-medium);
-	background-color: rgba(37, 99, 235, 0.1);
+	background-color: var(--ds-color-primary-alpha-10);
 
 	&::before {
 		content: "";

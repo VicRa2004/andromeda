@@ -5,7 +5,7 @@
 	align-items: flex-start;
 	gap: var(--ds-space-3);
 	padding: var(--ds-space-4);
-	border-radius: var(--ds-border-radius-md, 6px);
+	border-radius: var(--ds-radius-md);
 	border: 1px solid transparent;
 	font-size: var(--ds-font-size-sm);
 	line-height: 1.5;
@@ -30,27 +30,27 @@
 	opacity: 0.9;
 }
 
-/* Variants */
+/* Variants — using semantic tokens */
 .alert--info {
-	background-color: rgba(6, 182, 212, 0.1);
-	border-color: rgba(6, 182, 212, 0.2);
+	background-color: var(--ds-color-info-bg);
+	border-color: var(--ds-color-info-border);
 	color: var(--ds-color-info);
 }
 
 .alert--success {
-	background-color: rgba(16, 185, 129, 0.1);
-	border-color: rgba(16, 185, 129, 0.2);
+	background-color: var(--ds-color-success-bg);
+	border-color: var(--ds-color-success-border);
 	color: var(--ds-color-success);
 }
 
 .alert--warning {
-	background-color: rgba(245, 158, 11, 0.1);
-	border-color: rgba(245, 158, 11, 0.2);
+	background-color: var(--ds-color-warning-bg);
+	border-color: var(--ds-color-warning-border);
 	color: var(--ds-color-warning);
 }
 
 .alert--error {
-	background-color: rgba(239, 68, 68, 0.1);
-	border-color: rgba(239, 68, 68, 0.2);
+	background-color: var(--ds-color-error-bg);
+	border-color: var(--ds-color-error-border);
 	color: var(--ds-color-error);
 }

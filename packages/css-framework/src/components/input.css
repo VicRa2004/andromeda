@@ -57,7 +57,7 @@
 .input__field:focus {
 	outline: none;
 	border-color: var(--ds-color-primary);
-	box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+	box-shadow: 0 0 0 3px var(--ds-color-primary-alpha-10);
 	background-color: var(--ds-color-background);
 }
 
@@ -83,12 +83,12 @@
 /* Error state modifier */
 .input--error .input__field {
 	border-color: var(--ds-color-error);
-	background-color: rgba(239, 68, 68, 0.02);
+	background-color: var(--ds-color-error-bg);
 }
 
 .input--error .input__field:focus {
 	border-color: var(--ds-color-error);
-	box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+	box-shadow: 0 0 0 3px var(--ds-color-error-bg);
 }
 
 .input--error .input__label {
@@ -108,12 +108,12 @@
 /* Success state modifier (optional) */
 .input--success .input__field {
 	border-color: var(--ds-color-success);
-	background-color: rgba(16, 185, 129, 0.02);
+	background-color: var(--ds-color-success-bg);
 }
 
 .input--success .input__field:focus {
 	border-color: var(--ds-color-success);
-	box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+	box-shadow: 0 0 0 3px var(--ds-color-success-bg);
 }
 
 /* Readonly state */

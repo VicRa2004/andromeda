@@ -2,7 +2,10 @@
 
 /**
  * Effects tokens for Andromeda Design System
- * Includes border radius, shadows, and transitions
+ * Includes border radius, shadows, focus ring, and transitions
+ *
+ * NOTE: z-index scale lives in z-index.css
+ * NOTE: animation durations/easings live in animations.css
  */
 
 :root {
@@ -38,19 +41,4 @@
 	--ds-transition-normal: 150ms ease-in-out;
 	--ds-transition-slow: 200ms ease-in-out;
 	--ds-transition-slower: 300ms ease-in-out;
-
-	/* Animations */
-	--ds-animation-duration-fast: 100ms;
-	--ds-animation-duration-normal: 150ms;
-	--ds-animation-duration-slow: 200ms;
-	--ds-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
-	/* Z-index system (for layering) */
-	--ds-z-dropdown: 1000;
-	--ds-z-sticky: 1020;
-	--ds-z-fixed: 1030;
-	--ds-z-modal-backdrop: 1040;
-	--ds-z-modal: 1050;
-	--ds-z-popover: 1060;
-	--ds-z-tooltip: 1070;
 }

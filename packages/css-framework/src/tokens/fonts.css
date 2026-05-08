@@ -1,0 +1,13 @@
+/* @layer tokens */
+
+/**
+ * Font loading for Andromeda Design System
+ *
+ * Inter — Base/body font: clean, highly legible, modern UI font
+ * Outfit — Display/heading font: geometric, bold, adds visual contrast
+ *
+ * Loaded from Google Fonts with display=swap for optimal performance.
+ * Fallback to system font stack if fonts fail to load.
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap");

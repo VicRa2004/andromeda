@@ -3,7 +3,7 @@
 .table-container {
 	width: 100%;
 	overflow-x: auto;
-	border-radius: var(--ds-border-radius-md, 6px);
+	border-radius: var(--ds-radius-md);
 	border: 1px solid var(--ds-color-border);
 }
 
