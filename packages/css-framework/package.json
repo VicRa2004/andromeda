@@ -44,6 +44,9 @@
 		"./components/table": "./src/components/table.css"
 	},
 	"scripts": {
-		"build": "bun run scripts/build.ts"
+		"build": "vite build --mode development && vite build --mode production"
+	},
+	"devDependencies": {
+		"vite": "8.0.11"
 	}
 }

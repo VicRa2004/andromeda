@@ -227,6 +227,31 @@
 }
 
 /* =========================================================================
+   Theme variants
+   ========================================================================= */
+
+.modal--primary .modal__content {
+	border-top: 4px solid var(--ds-color-primary);
+	box-shadow:
+		0 8px 24px -4px var(--ds-color-primary-alpha-10),
+		0 24px 56px -8px var(--ds-color-primary-alpha-15),
+		0 0 0 1px rgb(0 0 0 / 0.03);
+}
+
+.modal--primary .modal__header {
+	background: linear-gradient(to bottom, var(--ds-color-primary-alpha-5), transparent);
+}
+
+.modal--primary .modal__title {
+	color: var(--ds-color-primary-dark);
+}
+
+.modal--primary .modal__close:hover {
+	background-color: var(--ds-color-primary-alpha-10);
+	color: var(--ds-color-primary);
+}
+
+/* =========================================================================
    Responsive adjustments
    ========================================================================= */
 

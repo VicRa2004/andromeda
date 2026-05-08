@@ -36,6 +36,7 @@ bun run format           # Biome format --write
 - **Formato**: Tabs, double-quotes (Biome)
 - **Exports**: ui-react → CJS + ESM; css-framework → CSS puro
 - **Testing**: Stories → tests en `*.stories.ts` + tests en `apps/docs/vitest.config.ts`
+- **Instalar dependecinas:** La dependecias se instalan de forma exacta de la siguiente forma: `bun install -E <dependencia>`
 
 ## 🎯 Archivos Clave
 
