@@ -4,18 +4,26 @@ export interface ToastProps
 	extends Omit<HTMLAttributes<HTMLDivElement>, "title"> {
 	title?: ReactNode;
 	description?: ReactNode;
+	variant?: "default" | "error" | "success" | "warning" | "info";
 	onClose?: () => void;
 }
 
 export const Toast = ({
 	title,
 	description,
+	variant = "default",
 	onClose,
 	className = "",
 	children,
 	...props
 }: ToastProps) => {
-	const classes = ["toast", className].filter(Boolean).join(" ");
+	const classes = [
+		"toast",
+		variant !== "default" ? `toast--${variant}` : "",
+		className,
+	]
+		.filter(Boolean)
+		.join(" ");
 
 	return (
 		<div className={classes} role="alert" {...props}>

@@ -219,8 +219,8 @@
 }
 
 .modal__close:focus-visible {
-	outline: var(--ds-focus-ring);
-	outline-offset: var(--ds-focus-ring-offset);
+	outline: none;
+	box-shadow: var(--ds-focus-ring);
 }
 
 /* =========================================================================
@@ -236,11 +236,8 @@
 }
 
 .modal--primary .modal__header {
-	background: linear-gradient(
-		to bottom,
-		var(--ds-color-primary-alpha-5),
-		transparent
-	);
+	background: var(--ds-color-primary-alpha-5);
+	border-bottom: 1px solid var(--ds-color-primary-alpha-10);
 }
 
 .modal--primary .modal__title {
@@ -261,11 +258,8 @@
 }
 
 .modal--secondary .modal__header {
-	background: linear-gradient(
-		to bottom,
-		var(--ds-color-secondary-alpha-5),
-		transparent
-	);
+	background: var(--ds-color-secondary-alpha-5);
+	border-bottom: 1px solid var(--ds-color-secondary-alpha-10);
 }
 
 .modal--secondary .modal__title {

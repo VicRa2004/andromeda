@@ -41,8 +41,8 @@
 }
 
 .radio__input:focus-visible {
-	outline: 2px solid var(--ds-color-interaction-focus-ring);
-	outline-offset: 2px;
+	outline: none;
+	box-shadow: var(--ds-focus-ring);
 }
 
 .radio__input:disabled {

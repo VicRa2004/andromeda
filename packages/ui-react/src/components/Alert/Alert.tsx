@@ -1,11 +1,11 @@
 import type { HTMLAttributes } from "react";
 
 export interface AlertProps extends HTMLAttributes<HTMLDivElement> {
-	variant?: "info" | "success" | "warning" | "error";
+	variant?: "primary" | "secondary" | "info" | "success" | "warning" | "error";
 }
 
 export const Alert = ({
-	variant = "info",
+	variant = "primary",
 	className = "",
 	children,
 	...props

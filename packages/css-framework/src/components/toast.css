@@ -54,3 +54,31 @@
 .toast__close:hover {
 	background-color: var(--ds-color-background);
 }
+
+/* =========================================================================
+   Variants
+   ========================================================================= */
+
+.toast--error {
+	background-color: var(--ds-color-error-bg);
+	border-color: var(--ds-color-error-border);
+	color: var(--ds-color-error-dark);
+}
+
+.toast--success {
+	background-color: var(--ds-color-success-bg);
+	border-color: var(--ds-color-success-border);
+	color: var(--ds-color-success-dark);
+}
+
+.toast--warning {
+	background-color: var(--ds-color-warning-bg);
+	border-color: var(--ds-color-warning-border);
+	color: var(--ds-color-warning-dark);
+}
+
+.toast--info {
+	background-color: var(--ds-color-info-bg);
+	border-color: var(--ds-color-info-border);
+	color: var(--ds-color-info-dark);
+}

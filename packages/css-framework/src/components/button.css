@@ -64,8 +64,8 @@
 	}
 
 	&:focus-visible {
-		outline: var(--ds-focus-ring);
-		outline-offset: var(--ds-focus-ring-offset);
+		outline: none;
+		box-shadow: var(--ds-focus-ring);
 	}
 
 	&:disabled {
@@ -94,8 +94,8 @@
 	}
 
 	&:focus-visible {
-		outline: var(--ds-focus-ring);
-		outline-offset: var(--ds-focus-ring-offset);
+		outline: none;
+		box-shadow: var(--ds-focus-ring);
 	}
 
 	&:disabled {
@@ -123,8 +123,8 @@
 	}
 
 	&:focus-visible {
-		outline: var(--ds-focus-ring);
-		outline-offset: var(--ds-focus-ring-offset);
+		outline: none;
+		box-shadow: var(--ds-focus-ring);
 	}
 
 	&:disabled {
@@ -151,8 +151,8 @@
 	}
 
 	&:focus-visible {
-		outline: var(--ds-focus-ring);
-		outline-offset: var(--ds-focus-ring-offset);
+		outline: none;
+		box-shadow: var(--ds-focus-ring);
 	}
 
 	&:disabled {
@@ -177,6 +177,6 @@
 }
 
 .button:focus-visible {
-	outline: var(--ds-focus-ring);
-	outline-offset: var(--ds-focus-ring-offset);
+	outline: none;
+	box-shadow: var(--ds-focus-ring);
 }

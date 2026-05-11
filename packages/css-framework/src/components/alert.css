@@ -3,7 +3,7 @@
 /**
  * Alert component - BEM structure
  * Block: .alert
- * Modifiers (variant): --info, --success, --warning, --error
+ * Modifiers (variant): --primary, --secondary, --info, --success, --warning, --error
  * Modifiers (style): --filled
  * Elements: --icon, --content, --title, --description, --close
  *
@@ -88,14 +88,36 @@
 }
 
 .alert__close:focus-visible {
-	outline: var(--ds-focus-ring);
-	outline-offset: var(--ds-focus-ring-offset);
+	outline: none;
+	box-shadow: var(--ds-focus-ring);
 }
 
 /* =========================================================================
    Color variants — Subtle (default)
    Uses: tinted bg + left accent border + dark color for text
    ========================================================================= */
+
+.alert--primary {
+	background-color: var(--ds-color-primary-alpha-10);
+	border-color: var(--ds-color-primary-alpha-15);
+	border-left-color: var(--ds-color-primary);
+	color: var(--ds-color-primary-dark);
+}
+
+.alert--primary .alert__icon {
+	color: var(--ds-color-primary);
+}
+
+.alert--secondary {
+	background-color: var(--ds-color-secondary-alpha-10);
+	border-color: var(--ds-color-secondary-alpha-15);
+	border-left-color: var(--ds-color-secondary);
+	color: var(--ds-color-secondary-dark);
+}
+
+.alert--secondary .alert__icon {
+	color: var(--ds-color-secondary);
+}
 
 .alert--info {
 	background-color: var(--ds-color-info-bg);
@@ -144,6 +166,28 @@
 /* =========================================================================
    Filled style — high urgency, solid color bg
    ========================================================================= */
+
+.alert--filled.alert--primary {
+	background-color: var(--ds-color-primary);
+	border-color: var(--ds-color-primary);
+	border-left-color: var(--ds-color-primary-dark);
+	color: white;
+}
+
+.alert--filled.alert--primary .alert__icon {
+	color: white;
+}
+
+.alert--filled.alert--secondary {
+	background-color: var(--ds-color-secondary);
+	border-color: var(--ds-color-secondary);
+	border-left-color: var(--ds-color-secondary-dark);
+	color: white;
+}
+
+.alert--filled.alert--secondary .alert__icon {
+	color: white;
+}
 
 .alert--filled.alert--info {
 	background-color: var(--ds-color-info);

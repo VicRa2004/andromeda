@@ -12,7 +12,7 @@ const meta = {
 	argTypes: {
 		variant: {
 			control: "select",
-			options: ["info", "success", "warning", "error"],
+			options: ["primary", "secondary", "info", "success", "warning", "error"],
 		},
 	},
 } satisfies Meta<typeof Alert>;
@@ -22,7 +22,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
 	args: {
-		variant: "info",
+		variant: "primary",
 	},
 	render: (args) => (
 		<Alert {...args}>
@@ -100,6 +100,28 @@ export const ErrorAlert: Story = {
 export const AllVariants: Story = {
 	render: () => (
 		<div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+			<Alert variant="primary">
+				<Alert.Icon>
+					<Info size={18} />
+				</Alert.Icon>
+				<Alert.Content>
+					<Alert.Title>Primary</Alert.Title>
+					<Alert.Description>
+						This is a primary alert message.
+					</Alert.Description>
+				</Alert.Content>
+			</Alert>
+			<Alert variant="secondary">
+				<Alert.Icon>
+					<Info size={18} />
+				</Alert.Icon>
+				<Alert.Content>
+					<Alert.Title>Secondary</Alert.Title>
+					<Alert.Description>
+						This is a secondary alert message.
+					</Alert.Description>
+				</Alert.Content>
+			</Alert>
 			<Alert variant="info">
 				<Alert.Icon>
 					<Info size={18} />

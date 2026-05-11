@@ -12,6 +12,7 @@ export interface ToastMessage {
 	title?: ReactNode;
 	description?: ReactNode;
 	duration?: number;
+	variant?: "default" | "error" | "success" | "warning" | "info";
 }
 
 export interface ToastContextValue {
@@ -34,9 +35,17 @@ export const ToastProvider = ({ children }: ToastProviderProps) => {
 	}, []);
 
 	const toast = useCallback(
-		({ title, description, duration = 3000 }: Omit<ToastMessage, "id">) => {
+		({
+			title,
+			description,
+			duration = 3000,
+			variant = "default",
+		}: Omit<ToastMessage, "id">) => {
 			const id = Math.random().toString(36).substring(2, 9);
-			setToasts((prev) => [...prev, { id, title, description, duration }]);
+			setToasts((prev) => [
+				...prev,
+				{ id, title, description, duration, variant },
+			]);
 
 			if (duration > 0) {
 				setTimeout(() => {
@@ -65,6 +74,7 @@ export const ToastProvider = ({ children }: ToastProviderProps) => {
 						key={t.id}
 						title={t.title}
 						description={t.description}
+						variant={t.variant}
 						onClose={() => dismiss(t.id)}
 					/>
 				))}

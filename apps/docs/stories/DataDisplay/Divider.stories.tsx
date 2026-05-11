@@ -21,6 +21,10 @@ const meta = {
 			control: "select",
 			options: ["compact", "default", "spacious"],
 		},
+		color: {
+			control: "select",
+			options: ["default", "primary", "secondary"],
+		},
 		transparent: {
 			control: "boolean",
 		},
@@ -42,10 +46,17 @@ export const Horizontal: Story = {
 
 export const Vertical: Story = {
 	render: (args) => (
-		<div style={{ display: "flex", height: "50px", alignItems: "center" }}>
-			<p>Left content</p>
+		<div
+			style={{
+				display: "flex",
+				height: "50px",
+				alignItems: "center",
+				justifyContent: "center",
+			}}
+		>
+			<div style={{ display: "flex", alignItems: "center" }}>Left content</div>
 			<Divider {...args} orientation="vertical" />
-			<p>Right content</p>
+			<div style={{ display: "flex", alignItems: "center" }}>Right content</div>
 		</div>
 	),
 };
@@ -91,6 +102,19 @@ export const AllVariants: Story = {
 			<Divider variant="dashed" />
 			<p style={{ fontSize: "12px", color: "#888" }}>Gradient</p>
 			<Divider variant="gradient" />
+		</div>
+	),
+};
+
+export const Colors: Story = {
+	render: () => (
+		<div style={{ width: "400px" }}>
+			<p style={{ fontSize: "12px", color: "#888" }}>Default</p>
+			<Divider />
+			<p style={{ fontSize: "12px", color: "#888" }}>Primary</p>
+			<Divider color="primary" />
+			<p style={{ fontSize: "12px", color: "#888" }}>Secondary</p>
+			<Divider color="secondary" />
 		</div>
 	),
 };

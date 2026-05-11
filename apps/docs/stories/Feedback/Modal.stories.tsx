@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Modal } from "@andromeda/ui-react";
+import { Modal, Button } from "@andromeda/ui-react";
 import { useState } from "react";
 
 const meta = {
@@ -38,9 +38,9 @@ const ModalStory = (args: any) => {
 
 	return (
 		<div>
-			<button type="button" onClick={() => setIsOpen(true)}>
+			<Button variant="primary" onClick={() => setIsOpen(true)}>
 				Open Modal
-			</button>
+			</Button>
 
 			<Modal {...args} isOpen={isOpen} onClose={() => setIsOpen(false)}>
 				<Modal.Header>
@@ -54,10 +54,10 @@ const ModalStory = (args: any) => {
 					</p>
 				</Modal.Body>
 				<Modal.Footer>
-					<button type="button" onClick={() => setIsOpen(false)}>
+					<Button variant="outline" onClick={() => setIsOpen(false)}>
 						Close
-					</button>
-					<button type="button">Save Changes</button>
+					</Button>
+					<Button variant="primary">Save Changes</Button>
 				</Modal.Footer>
 			</Modal>
 		</div>
