@@ -29,6 +29,8 @@
 }
 
 .breadcrumb__link {
+	display: inline-flex;
+	align-items: center;
 	color: var(--ds-color-text-secondary);
 	text-decoration: none;
 	transition: color var(--ds-transition-fast);

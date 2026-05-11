@@ -34,9 +34,18 @@
 	box-shadow: var(--ds-shadow-lg);
 }
 
-.dropdown.is-open .dropdown__menu {
+.dropdown.is-open > .dropdown__menu {
 	display: block;
 	animation: dropdown-fade-in var(--ds-transition-fast) ease-out;
+}
+
+.dropdown--placement-right > .dropdown__menu {
+	top: -4px;
+	left: calc(100% + var(--ds-space-1));
+}
+
+.dropdown--placement-right.is-open > .dropdown__menu {
+	animation: dropdown-fade-in-right var(--ds-transition-fast) ease-out;
 }
 
 @keyframes dropdown-fade-in {
@@ -47,6 +56,17 @@
 	to {
 		opacity: 1;
 		transform: translateY(0);
+	}
+}
+
+@keyframes dropdown-fade-in-right {
+	from {
+		opacity: 0;
+		transform: translateX(-4px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
 	}
 }
 

@@ -8,7 +8,7 @@ export interface TimelineProps extends React.HTMLAttributes<HTMLUListElement> {
 }
 
 export interface TimelineItemProps
-	extends React.LiHTMLAttributes<HTMLLIElement> {
+	extends Omit<React.LiHTMLAttributes<HTMLLIElement>, "title"> {
 	/** Title of the event */
 	title: React.ReactNode;
 	/** Time or date of the event */

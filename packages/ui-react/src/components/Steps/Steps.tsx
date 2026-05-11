@@ -9,7 +9,7 @@ export interface StepsProps extends React.HTMLAttributes<HTMLDivElement> {
 	children: React.ReactNode;
 }
 
-export interface StepProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface StepProps extends Omit<React.HTMLAttributes<HTMLDivElement>, "title"> {
 	/** Title of the step */
 	title: React.ReactNode;
 	/** Description of the step */

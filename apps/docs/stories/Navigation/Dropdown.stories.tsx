@@ -61,3 +61,26 @@ export const Large: Story = {
 		trigger: <Button size="lg">Large Dropdown</Button>,
 	},
 };
+
+export const Nested: Story = {
+	args: {
+		trigger: <Button variant="primary">Nested Menu</Button>,
+		children: [
+			<DropdownItem key="1">File</DropdownItem>,
+			<Dropdown
+				key="2"
+				placement="right"
+				trigger={
+					<DropdownItem style={{ display: "flex", justifyContent: "space-between" }}>
+						Share <span>→</span>
+					</DropdownItem>
+				}
+			>
+				<DropdownItem>Email</DropdownItem>
+				<DropdownItem>Copy Link</DropdownItem>
+				<DropdownItem>WhatsApp</DropdownItem>
+			</Dropdown>,
+			<DropdownItem key="3">Print</DropdownItem>,
+		],
+	},
+};

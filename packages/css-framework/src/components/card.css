@@ -79,7 +79,7 @@
 
 .card__body {
 	flex: 1;
-	padding: var(--ds-space-2) var(--ds-space-6);
+	padding: var(--ds-space-4) var(--ds-space-6);
 	overflow: hidden;
 }
 

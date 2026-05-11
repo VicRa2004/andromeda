@@ -5,6 +5,8 @@ export interface DropdownProps {
 	trigger: React.ReactNode;
 	/** Size of the dropdown */
 	size?: "sm" | "md" | "lg";
+	/** Placement of the dropdown menu */
+	placement?: "bottom" | "right";
 	/** Children elements (Dropdown items) */
 	children: React.ReactNode;
 	/** Optional CSS class name */
@@ -31,6 +33,7 @@ export interface DropdownItemProps
 export const Dropdown = ({
 	trigger,
 	size = "md",
+	placement = "bottom",
 	children,
 	className = "",
 }: DropdownProps) => {
@@ -55,9 +58,10 @@ export const Dropdown = ({
 
 	const baseClass = "dropdown";
 	const sizeClass = size !== "md" ? `${baseClass}--${size}` : "";
+	const placementClass = placement === "right" ? `${baseClass}--placement-right` : "";
 	const openClass = isOpen ? "is-open" : "";
 
-	const classes = [baseClass, sizeClass, openClass, className]
+	const classes = [baseClass, sizeClass, placementClass, openClass, className]
 		.filter(Boolean)
 		.join(" ");
 
