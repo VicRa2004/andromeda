@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { Button } from "../Button/Button";
 
 export interface DropdownProps {
 	/** Trigger element */
@@ -11,6 +12,10 @@ export interface DropdownProps {
 	children: React.ReactNode;
 	/** Optional CSS class name */
 	className?: string;
+	/** Button variant for the default trigger (if trigger is a string) */
+	variant?: "primary" | "secondary" | "outline" | "ghost";
+	/** Optional callback when the dropdown should close (used internally for nesting) */
+	onClose?: () => void;
 }
 
 export interface DropdownItemProps
@@ -34,6 +39,8 @@ export const Dropdown = ({
 	trigger,
 	size = "md",
 	placement = "bottom",
+	variant = "secondary",
+	onClose,
 	children,
 	className = "",
 }: DropdownProps) => {
@@ -85,28 +92,42 @@ export const Dropdown = ({
 				}
 				// Fallback if trigger is not a valid React element
 				return (
-					<div
+					<Button
+						variant={variant}
+						size={size}
 						className={`${baseClass}__trigger`}
 						onClick={toggleDropdown}
-						role="button"
-						tabIndex={0}
 						aria-expanded={isOpen}
 						aria-haspopup="menu"
 					>
 						{child}
-					</div>
+					</Button>
 				);
 			})}
 			<div className={`${baseClass}__menu`} role="menu">
 				{React.Children.map(children, (child) => {
 					if (React.isValidElement(child)) {
 						const reactChild = child as React.ReactElement<any>;
+						
+						// If child is a nested Dropdown, pass onClose down
+						if (reactChild.type === Dropdown) {
+							return React.cloneElement(reactChild, {
+								...reactChild.props,
+								onClose: () => {
+									if (reactChild.props.onClose) reactChild.props.onClose();
+									setIsOpen(false);
+									if (onClose) onClose();
+								}
+							});
+						}
+
 						return React.cloneElement(reactChild, {
 							...reactChild.props,
 							onClick: (e: React.MouseEvent<HTMLButtonElement>) => {
 								if (reactChild.props.onClick)
 									(reactChild.props.onClick as any)(e);
 								setIsOpen(false);
+								if (onClose) onClose();
 							},
 						} as React.HTMLAttributes<HTMLButtonElement>);
 					}
