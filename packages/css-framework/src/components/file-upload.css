@@ -1,0 +1,132 @@
+/* @layer components */
+
+/**
+ * File Upload component - BEM structure
+ * Block: .file-upload
+ * Elements: .file-upload__dropzone, .file-upload__preview
+ */
+
+.file-upload {
+	display: flex;
+	flex-direction: column;
+	gap: var(--ds-space-3);
+}
+
+.file-upload__dropzone {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: var(--ds-space-8) var(--ds-space-4);
+	border: 2px dashed var(--ds-color-border);
+	border-radius: var(--ds-radius-md);
+	background-color: var(--ds-color-surface);
+	text-align: center;
+	transition:
+		border-color var(--ds-transition-fast),
+		background-color var(--ds-transition-fast);
+	cursor: pointer;
+}
+
+.file-upload__dropzone:hover,
+.file-upload__dropzone:focus-within {
+	border-color: var(--ds-color-primary);
+	background-color: var(--ds-color-surface-hover);
+}
+
+.file-upload__dropzone.is-drag-active {
+	border-color: var(--ds-color-primary);
+	background-color: var(--ds-color-primary-alpha-5);
+}
+
+.file-upload__input {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.file-upload__icon {
+	color: var(--ds-color-text-tertiary);
+	margin-bottom: var(--ds-space-3);
+	transition: color var(--ds-transition-fast);
+}
+
+.file-upload__dropzone:hover .file-upload__icon,
+.file-upload__dropzone.is-drag-active .file-upload__icon {
+	color: var(--ds-color-primary);
+}
+
+.file-upload__text {
+	font-family: var(--ds-font-family-base);
+	font-size: var(--ds-font-size-base);
+	color: var(--ds-color-text);
+	margin: 0 0 var(--ds-space-1);
+}
+
+.file-upload__hint {
+	font-family: var(--ds-font-family-base);
+	font-size: var(--ds-font-size-sm);
+	color: var(--ds-color-text-secondary);
+	margin: 0;
+}
+
+.file-upload__preview-list {
+	display: flex;
+	flex-direction: column;
+	gap: var(--ds-space-2);
+}
+
+.file-upload__preview-item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: var(--ds-space-3);
+	background-color: var(--ds-color-surface);
+	border: 1px solid var(--ds-color-border);
+	border-radius: var(--ds-radius-sm);
+}
+
+.file-upload__file-info {
+	display: flex;
+	align-items: center;
+	gap: var(--ds-space-3);
+	overflow: hidden;
+}
+
+.file-upload__file-name {
+	font-family: var(--ds-font-family-base);
+	font-size: var(--ds-font-size-sm);
+	font-weight: var(--ds-font-weight-medium);
+	color: var(--ds-color-text);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.file-upload__file-size {
+	font-family: var(--ds-font-family-base);
+	font-size: var(--ds-font-size-sm);
+	color: var(--ds-color-text-tertiary);
+}
+
+.file-upload__remove {
+	display: inline-flex;
+	padding: var(--ds-space-1);
+	color: var(--ds-color-text-secondary);
+	background: transparent;
+	border: none;
+	border-radius: var(--ds-radius-sm);
+	cursor: pointer;
+	transition:
+		background-color var(--ds-transition-fast),
+		color var(--ds-transition-fast);
+}
+
+.file-upload__remove:hover {
+	background-color: var(--ds-color-surface-hover);
+	color: var(--ds-color-error);
+}

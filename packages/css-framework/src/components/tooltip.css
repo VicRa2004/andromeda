@@ -1,0 +1,65 @@
+/* @layer components */
+
+/**
+ * Tooltip component - BEM structure
+ * Block: .tooltip
+ * Elements: .tooltip__content, .tooltip__arrow
+ * Modifiers: --dark, --light
+ */
+
+.tooltip {
+	/* The container element is usually unstyled, the trigger can be any element */
+	display: inline-block;
+}
+
+.tooltip__content {
+	z-index: var(--ds-z-index-tooltip);
+	max-width: 250px;
+	padding: var(--ds-space-1) var(--ds-space-2);
+	font-family: var(--ds-font-family-base);
+	font-size: var(--ds-font-size-sm);
+	line-height: var(--ds-line-height-tight);
+	border-radius: var(--ds-radius-sm);
+	pointer-events: none;
+	animation: tooltip-fade-in var(--ds-transition-fast) ease-out;
+}
+
+.tooltip__arrow {
+	position: absolute;
+	width: 8px;
+	height: 8px;
+	transform: rotate(45deg);
+}
+
+@keyframes tooltip-fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/* Modifiers */
+.tooltip--dark .tooltip__content {
+	color: #fff;
+	background-color: var(--ds-color-gray-900);
+	box-shadow: var(--ds-shadow-md);
+}
+
+.tooltip--dark .tooltip__arrow {
+	background-color: var(--ds-color-gray-900);
+}
+
+.tooltip--light .tooltip__content {
+	color: var(--ds-color-text);
+	background-color: var(--ds-color-surface);
+	border: 1px solid var(--ds-color-border);
+	box-shadow: var(--ds-shadow-md);
+}
+
+.tooltip--light .tooltip__arrow {
+	background-color: var(--ds-color-surface);
+	border: 1px solid var(--ds-color-border);
+	/* Hide borders pointing inside the tooltip based on placement in React */
+}

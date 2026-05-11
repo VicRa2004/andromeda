@@ -1,0 +1,82 @@
+/* @layer components */
+
+/**
+ * List Group component - BEM structure
+ * Block: .list-group
+ * Elements: .list-group__item
+ * Modifiers: --flush, --bordered, --interactive
+ */
+
+.list-group {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	border: 1px solid var(--ds-color-border);
+	border-radius: var(--ds-radius-md);
+	background-color: var(--ds-color-surface);
+	overflow: hidden;
+}
+
+.list-group__item {
+	position: relative;
+	display: block;
+	padding: var(--ds-space-3) var(--ds-space-4);
+	color: var(--ds-color-text);
+	font-family: var(--ds-font-family-base);
+	font-size: var(--ds-font-size-base);
+	text-decoration: none;
+	background-color: var(--ds-color-surface);
+	border-bottom: 1px solid var(--ds-color-border);
+	transition:
+		background-color var(--ds-transition-fast),
+		color var(--ds-transition-fast);
+}
+
+.list-group__item:last-child {
+	border-bottom: none;
+}
+
+.list-group__item.is-disabled,
+.list-group__item:disabled {
+	color: var(--ds-color-text-tertiary);
+	pointer-events: none;
+	background-color: var(--ds-color-surface);
+	opacity: 0.6;
+}
+
+.list-group__item.is-active {
+	z-index: 2;
+	color: #fff;
+	background-color: var(--ds-color-primary);
+	border-color: var(--ds-color-primary);
+}
+
+/* Modifiers */
+.list-group--interactive
+.list-group__item:is(a, button):not(.is-disabled):not(.is-active):hover,
+.list-group--interactive
+	.list-group__item:is(a, button):not(.is-disabled):not(
+		.is-active
+	):focus-visible {
+	z-index: 1;
+	color: var(--ds-color-primary);
+	text-decoration: none;
+	background-color: var(--ds-color-surface-hover);
+	outline: none;
+}
+
+.list-group--flush {
+	border: none;
+	border-radius: 0;
+}
+
+.list-group--flush .list-group__item {
+	border-width: 0 0 1px;
+}
+
+.list-group--flush .list-group__item:last-child {
+	border-bottom-width: 0;
+}

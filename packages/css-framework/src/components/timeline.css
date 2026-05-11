@@ -1,0 +1,125 @@
+/* @layer components */
+
+/**
+ * Timeline component - BEM structure
+ * Block: .timeline
+ * Elements: .timeline__item, .timeline__marker, .timeline__content
+ * Modifiers: --left, --right, --alternate
+ */
+
+.timeline {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.timeline::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 2px;
+	background-color: var(--ds-color-border);
+}
+
+.timeline--left::before {
+	left: 11px;
+}
+
+.timeline--right::before {
+	right: 11px;
+}
+
+.timeline--alternate::before {
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.timeline__item {
+	position: relative;
+	margin-bottom: var(--ds-space-6);
+}
+
+.timeline__item:last-child {
+	margin-bottom: 0;
+}
+
+.timeline__marker {
+	position: absolute;
+	top: 4px;
+	width: 24px;
+	height: 24px;
+	background-color: var(--ds-color-surface);
+	border: 2px solid var(--ds-color-primary);
+	border-radius: 50%;
+	z-index: 1;
+}
+
+.timeline--left .timeline__marker {
+	left: 0;
+}
+
+.timeline--right .timeline__marker {
+	right: 0;
+}
+
+.timeline--alternate .timeline__marker {
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.timeline__content {
+	position: relative;
+	padding: var(--ds-space-4);
+	background-color: var(--ds-color-surface);
+	border: 1px solid var(--ds-color-border);
+	border-radius: var(--ds-radius-md);
+	box-shadow: var(--ds-shadow-sm);
+	font-family: var(--ds-font-family-base);
+}
+
+.timeline--left .timeline__content {
+	margin-left: var(--ds-space-8);
+}
+
+.timeline--right .timeline__content {
+	margin-right: var(--ds-space-8);
+}
+
+.timeline--alternate .timeline__item:nth-child(odd) .timeline__content {
+	width: calc(50% - var(--ds-space-6));
+	float: left;
+}
+
+.timeline--alternate .timeline__item:nth-child(even) .timeline__content {
+	width: calc(50% - var(--ds-space-6));
+	float: right;
+}
+
+/* Clearfix for alternate layout */
+.timeline--alternate .timeline__item::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.timeline__title {
+	margin: 0 0 var(--ds-space-1);
+	font-size: var(--ds-font-size-lg);
+	font-weight: var(--ds-font-weight-semibold);
+	color: var(--ds-color-text);
+}
+
+.timeline__description {
+	margin: 0;
+	font-size: var(--ds-font-size-base);
+	color: var(--ds-color-text-secondary);
+}
+
+.timeline__time {
+	display: block;
+	margin-bottom: var(--ds-space-2);
+	font-size: var(--ds-font-size-sm);
+	color: var(--ds-color-text-tertiary);
+}

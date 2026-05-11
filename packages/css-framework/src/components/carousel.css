@@ -1,0 +1,99 @@
+/* @layer components */
+
+/**
+ * Carousel component - BEM structure
+ * Block: .carousel
+ * Elements: .carousel__track, .carousel__slide, .carousel__nav
+ */
+
+.carousel {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+
+.carousel__track {
+	display: flex;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+.carousel__track::-webkit-scrollbar {
+	display: none;
+}
+
+.carousel__slide {
+	flex: 0 0 100%;
+	width: 100%;
+	scroll-snap-align: start;
+	/* Allow configuring items per view in React by passing custom flex-basis */
+}
+
+.carousel__nav {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--ds-space-2);
+	margin-top: var(--ds-space-3);
+}
+
+.carousel__dot {
+	width: 8px;
+	height: 8px;
+	padding: 0;
+	background-color: var(--ds-color-gray-300);
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+	transition:
+		background-color var(--ds-transition-fast),
+		transform var(--ds-transition-fast);
+}
+
+.carousel__dot.is-active {
+	background-color: var(--ds-color-primary);
+	transform: scale(1.2);
+}
+
+.carousel__dot:focus-visible {
+	outline: none;
+	box-shadow: 0 0 0 2px var(--ds-focus-ring-color);
+}
+
+.carousel__control {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	background-color: rgba(var(--ds-color-surface-rgb, 255, 255, 255), 0.8);
+	backdrop-filter: blur(4px);
+	border: 1px solid var(--ds-color-border);
+	border-radius: 50%;
+	color: var(--ds-color-text);
+	cursor: pointer;
+	z-index: 2;
+	transition:
+		background-color var(--ds-transition-fast),
+		color var(--ds-transition-fast);
+}
+
+.carousel__control:hover {
+	background-color: var(--ds-color-surface);
+	color: var(--ds-color-primary);
+}
+
+.carousel__control--prev {
+	left: var(--ds-space-2);
+}
+
+.carousel__control--next {
+	right: var(--ds-space-2);
+}

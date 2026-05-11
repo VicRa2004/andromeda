@@ -1,0 +1,80 @@
+/* @layer components */
+
+/**
+ * Tag component - BEM structure
+ * Block: .tag
+ * Elements: .tag__label, .tag__close
+ * Modifiers: --primary, --secondary, --outline
+ */
+
+.tag {
+	display: inline-flex;
+	align-items: center;
+	padding: var(--ds-space-1) var(--ds-space-3);
+	font-family: var(--ds-font-family-base);
+	font-size: var(--ds-font-size-sm);
+	font-weight: var(--ds-font-weight-medium);
+	border-radius: var(--ds-radius-full);
+	border: 1px solid transparent;
+	background-color: var(--ds-color-gray-200);
+	color: var(--ds-color-text);
+	white-space: nowrap;
+	transition: all var(--ds-transition-fast);
+}
+
+.tag__label {
+	display: inline-block;
+}
+
+.tag__close {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: var(--ds-space-1);
+	margin-right: calc(var(--ds-space-1) * -1);
+	padding: 0;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background: transparent;
+	border: none;
+	color: inherit;
+	cursor: pointer;
+	opacity: 0.6;
+	transition:
+		opacity var(--ds-transition-fast),
+		background-color var(--ds-transition-fast);
+}
+
+.tag__close:hover,
+.tag__close:focus-visible {
+	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.1);
+	outline: none;
+}
+
+/* Modifiers */
+.tag--primary {
+	background-color: var(--ds-color-primary-alpha-15);
+	color: var(--ds-color-primary-dark);
+}
+
+.tag--primary .tag__close:hover,
+.tag--primary .tag__close:focus-visible {
+	background-color: var(--ds-color-primary-alpha-20);
+}
+
+.tag--secondary {
+	background-color: var(--ds-color-secondary-alpha-15);
+	color: var(--ds-color-secondary-dark);
+}
+
+.tag--secondary .tag__close:hover,
+.tag--secondary .tag__close:focus-visible {
+	background-color: var(--ds-color-secondary-alpha-20);
+}
+
+.tag--outline {
+	background-color: transparent;
+	border-color: var(--ds-color-border);
+}
