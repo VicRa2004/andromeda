@@ -1,0 +1,85 @@
+/* @layer components */
+
+/**
+ * Pagination component - BEM structure
+ * Block: .pagination
+ * Elements: .pagination__list, .pagination__item, .pagination__link
+ * Modifiers: --sm, --lg, --rounded
+ */
+
+.pagination {
+	display: inline-flex;
+}
+
+.pagination__list {
+	display: flex;
+	align-items: center;
+	gap: var(--ds-space-1);
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.pagination__link {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 36px;
+	height: 36px;
+	padding: 0 var(--ds-space-2);
+	font-family: var(--ds-font-family-base);
+	font-size: var(--ds-font-size-base);
+	font-weight: var(--ds-font-weight-medium);
+	color: var(--ds-color-text);
+	background-color: transparent;
+	border: 1px solid transparent;
+	border-radius: var(--ds-radius-sm);
+	text-decoration: none;
+	transition: all var(--ds-transition-fast);
+	cursor: pointer;
+}
+
+.pagination__link:hover {
+	background-color: var(--ds-color-surface-hover);
+}
+
+.pagination__link.is-active,
+.pagination__link[aria-current="page"] {
+	color: #fff;
+	background-color: var(--ds-color-primary);
+	border-color: var(--ds-color-primary);
+}
+
+.pagination__link.is-active:hover,
+.pagination__link[aria-current="page"]:hover {
+	background-color: var(--ds-color-primary-dark);
+}
+
+.pagination__link:disabled,
+.pagination__link.is-disabled {
+	color: var(--ds-color-text-tertiary);
+	pointer-events: none;
+	opacity: 0.6;
+}
+
+.pagination__link:focus-visible {
+	outline: none;
+	box-shadow: var(--ds-focus-ring);
+}
+
+/* Modifiers */
+.pagination--sm .pagination__link {
+	min-width: 28px;
+	height: 28px;
+	font-size: var(--ds-font-size-sm);
+}
+
+.pagination--lg .pagination__link {
+	min-width: 44px;
+	height: 44px;
+	font-size: var(--ds-font-size-lg);
+}
+
+.pagination--rounded .pagination__link {
+	border-radius: var(--ds-radius-full);
+}
