@@ -55,9 +55,9 @@
 }
 
 .input__field:focus {
-	outline: none;
+	outline: var(--ds-focus-ring);
+	outline-offset: var(--ds-focus-ring-offset);
 	border-color: var(--ds-color-primary);
-	box-shadow: 0 0 0 3px var(--ds-color-primary-alpha-10);
 	background-color: var(--ds-color-background);
 }
 
@@ -88,7 +88,8 @@
 
 .input--error .input__field:focus {
 	border-color: var(--ds-color-error);
-	box-shadow: 0 0 0 3px var(--ds-color-error-bg);
+	outline: 2px solid var(--ds-color-error);
+	outline-offset: var(--ds-focus-ring-offset);
 }
 
 .input--error .input__label {
@@ -113,7 +114,8 @@
 
 .input--success .input__field:focus {
 	border-color: var(--ds-color-success);
-	box-shadow: 0 0 0 3px var(--ds-color-success-bg);
+	outline: 2px solid var(--ds-color-success);
+	outline-offset: var(--ds-focus-ring-offset);
 }
 
 /* Readonly state */

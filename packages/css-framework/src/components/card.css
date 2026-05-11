@@ -26,9 +26,7 @@
 		transform var(--ds-transition-slow);
 
 	/* Default: elevated variant */
-	box-shadow:
-		0 1px 3px 0 rgb(0 0 0 / 0.06),
-		0 2px 8px -1px rgb(0 0 0 / 0.08);
+	box-shadow: var(--ds-shadow-sm);
 	border: 1px solid var(--ds-color-border);
 }
 
@@ -37,22 +35,18 @@
    ========================================================================= */
 
 .card--elevated {
-	box-shadow:
-		0 4px 12px -2px rgb(0 0 0 / 0.08),
-		0 8px 24px -4px rgb(0 0 0 / 0.06);
+	box-shadow: var(--ds-shadow-md);
 	border-color: var(--ds-color-border-light);
 
 	&:hover {
-		box-shadow:
-			0 8px 20px -4px rgb(0 0 0 / 0.1),
-			0 16px 40px -8px rgb(0 0 0 / 0.08);
+		box-shadow: var(--ds-shadow-xl);
 		transform: translateY(-2px);
 	}
 }
 
 .card--outlined {
 	box-shadow: none;
-	border: 1.5px solid var(--ds-color-border);
+	border: 1px solid var(--ds-color-border);
 
 	&:hover {
 		border-color: var(--ds-color-primary);
@@ -67,7 +61,7 @@
 
 	&:hover {
 		background-color: var(--ds-color-background);
-		box-shadow: 0 2px 8px -2px rgb(0 0 0 / 0.06);
+		box-shadow: var(--ds-shadow-sm);
 	}
 }
 
